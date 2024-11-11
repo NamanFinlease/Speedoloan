@@ -1,0 +1,27 @@
+.hover-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%; /* Ensure equal width */
+  height: 150px; /* Set a fixed height to ensure equal box sizes */
+  border: 2px solid #083464;
+  border-radius: 10px;
+  padding: 30px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: black; /* Initial text color */
+}
+
+.hover-box:hover {
+  transform: scale(1.05);
+  background-color: orange; /* Change background to blue on hover */
+  color: white; /* Change text color to white on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hover-box i {
+  margin-right: 8px;
+  font-size: 24px; /* Icon size */
+  color: inherit; /* Ensure icon color changes with text */
+}

@@ -29,8 +29,8 @@ const Header = () => {
   return (
     <>
       {/* Navbar */}
-      <AppBar position="sticky" sx={{ backgroundColor: 'transparent', borderRadius: '50px', backdropFilter: 'blur(10px)' }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'nowrap', minHeight: '64px' }}> {/* Ensured minHeight consistency */}
+      <AppBar position="sticky" sx={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '50px', backdropFilter: 'blur(5px)' }}>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'nowrap', minHeight: '64px' }}> {/* Ensured minHeight consistency */}
           <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
             <img src={logo} alt="Logo" style={{ width: '120px', height: '100px' }} />
           </Link>

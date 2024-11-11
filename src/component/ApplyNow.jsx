@@ -283,7 +283,7 @@ const ApplyNow = () => {
                   {field.options &&
                     field.options.map((option) => (
                       <MenuItem key={option} value={option}>
- {option === "M" ? "Male" : option === "F" ? "Female" : "Otherss"}
+ {option === "M" ? "Male" : option === "F" ? "Female" : "Others"}
  </MenuItem>
                     ))}
                 </TextField>

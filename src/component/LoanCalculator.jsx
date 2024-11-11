@@ -279,13 +279,14 @@ const LoanCalculator = () => {
     <Link to="https://www.facebook.com/profile.php?id=61567546377871">
         <img src={FacebookImage} alt="Facebook" style={{ width: '30px', height: '30px' }} />
     </Link>
-    <Link to="https://www.instagram.com/speed.loans/">
-        <img src={InstagramImage} alt="Instagram" style={{ width: '30px', height: '30px' }} />
-    </Link>
-    <Link to="https://x.com/speed_loans">
+    <a href="https://www.instagram.com/speedo.loan/" target="_blank" rel="noopener noreferrer">
+    <img src={InstagramImage} alt="Instagram" style={{ width: '30px', height: '30px' }} />
+</a>
+
+    <Link to="https://x.com/speedo_loan">
         <img src={TwitterImage} alt="Twitter" style={{ width: '30px', height: '30px' }} />
     </Link>
-    <Link to="https://www.instagram.com/speed.loans/">
+    <Link to="https://www.youtube.com/@SpeedLoans" >
         <img src={YouTubeImage} alt="YouTube" style={{ width: '30px', height: '30px' }} />
     </Link>
 </Box>

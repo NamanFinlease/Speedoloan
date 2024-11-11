@@ -124,7 +124,7 @@ const FAQs = () => {
                             {
                                 id: 'faq12',
                                 question: '12. How can I contact customer support?',
-                                answer: `You can contact Speedoloan.com customer support via phone, email, or live chat available on our website. Our support team is available 24/7 to assist you with any queries.`,
+                                answer: `You can contact Speedoloan.com customer support via phone, or email available on our website. Our support team is available 24/7 to assist you with any queries.`,
                             },
                         ].map((faq, index) => (
                             <Accordion

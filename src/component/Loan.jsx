@@ -15,8 +15,10 @@ const Loan = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true); // Trigger animation when visible
+          document.body.style.overflow = 'hidden'; // Disable scrolling on body
         } else {
           setIsVisible(false); // Reset animation when out of view
+          document.body.style.overflow = ''; // Re-enable scrolling
         }
       },
       { threshold: 0.03 } // Trigger when 3% of the element is visible
@@ -34,15 +36,14 @@ const Loan = () => {
   }, []);
 
   return (
-    <Container ref={containerRef} sx={{ mt: 6 }}>
+    <Container ref={containerRef} sx={{ mt: 6, overflow: 'hidden' }}> {/* Set overflow to hidden here */}
       <Box
         sx={{
-         
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' }, // Stack boxes vertically on small screens
           justifyContent: 'center', // Center boxes
           alignItems: 'center', // Center align boxes
-          overflow: 'hidden',
+          overflow: 'hidden', // Prevent horizontal scroll
           animation: {
             xs: 'none', // No animation on small screens
             md: isVisible ? 'marquee 20s linear infinite' : 'none', // Slow down animation to 20s on medium and larger screens
@@ -50,16 +51,14 @@ const Loan = () => {
         }}
       >
         {/* Amount Box */}
-        <Box
-          sx={commonBoxStyles}
-        >
+        <Box sx={commonBoxStyles}>
           <Typography variant="h5" gutterBottom sx={{ color: 'black' }}>
             Loan Amount
           </Typography>
           <img
             src={AmountImage}
             alt="Loan Amount Icon"
-            style={{ width: 40, height: 40, marginBottom: '8px' }}
+            style={{ width: 50, height: 50, marginBottom: '8px' }} // Set the same size for all images
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             Loan from ₹5000 - ₹100000
@@ -67,16 +66,14 @@ const Loan = () => {
         </Box>
 
         {/* Tenure Box */}
-        <Box
-          sx={commonBoxStyles}
-        >
+        <Box sx={commonBoxStyles}>
           <Typography variant="h5" gutterBottom sx={{ color: 'black' }}>
             Loan Tenure
           </Typography>
           <img
             src={TenureImage}
             alt="Loan Tenure Icon"
-            style={{ width: 40, height: 40, marginBottom: '8px' }}
+            style={{ width: 50, height: 50, marginBottom: '8px' }} // Set the same size for all images
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             Tenure from 7 to 90 days
@@ -84,33 +81,29 @@ const Loan = () => {
         </Box>
 
         {/* Paperless Disbursal */}
-        <Box
-          sx={commonBoxStyles}
-        >
+        <Box sx={commonBoxStyles}>
           <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-           100% Paperless
+            100% Paperless
           </Typography>
           <img
             src={PaperlessDisbursal}
             alt="Paperless Disbursal Icon"
-            style={{ width: 40, height: 40, marginBottom: '8px' }}
+            style={{ width: 60, height: 60, marginBottom: '8px' }} // Set the same size for all images
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
-           100% Paperless Verification Process
+            100% Paperless Verification Process
           </Typography>
         </Box>
 
         {/* Instant Disbursal */}
-        <Box
-          sx={commonBoxStyles}
-        >
+        <Box sx={commonBoxStyles}>
           <Typography variant="h5" gutterBottom sx={{ color: 'black' }}>
             Instant Loan
           </Typography>
           <img
             src={disbursal}
             alt="Instant Disbursal Icon"
-            style={{ width: 40, height: 40, marginBottom: '8px' }}
+            style={{ width: 70, height: 70, marginBottom: '8px' }} // Set the same size for all images
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             Swift Payout
@@ -118,16 +111,14 @@ const Loan = () => {
         </Box>
 
         {/* Unsecure Loan Box */}
-        <Box
-          sx={commonBoxStyles}
-        >
+        <Box sx={commonBoxStyles}>
           <Typography variant="h5" gutterBottom sx={{ color: 'black' }}>
             Unsecure Loan
           </Typography>
           <img
             src={UnsecureLoanImage}
             alt="Unsecure Loan Icon"
-            style={{ width: 40, height: 40, marginBottom: '8px' }}
+            style={{ width: 50, height: 50, marginBottom: '8px' }} // Set the same size for all images
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             Start now

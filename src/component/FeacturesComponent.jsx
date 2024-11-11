@@ -20,7 +20,6 @@ const FeaturesComponent = () => {
       }
     };
 
-    // Show component immediately on mobile devices
     if (window.innerWidth < 768) {
       boxRef.current.classList.add('animate');
     } else {
@@ -65,7 +64,7 @@ const FeaturesComponent = () => {
           },
         }}
       >
-        Feeling Exhausted from Loan Rejections?
+        LOAN IN 5 MINUTES 
         <br />
         <Typography
           variant="h4"
@@ -117,17 +116,19 @@ const FeaturesComponent = () => {
               '&:hover': {
                 transform: 'scale(1.05)',
               },
+              height: '100%',
             }}
           >
-            <img
+            <Box
+              component="img"
               src={LightningImage}
               alt="Lightning Fast Approval"
-              style={{
-                overflow: 'auto',
-                maxHeight: '100px',
-                width: '100px',
-                height: '100px',
+              sx={{
+                width: { xs: '80px', sm: '100px', md: '120px' },
+                height: { xs: '80px', sm: '100px', md: '120px' },
                 marginBottom: '16px',
+                objectFit: 'cover',
+                borderRadius: '50%',
                 animation: 'zoomIn 3s infinite',
               }}
             />
@@ -135,7 +136,7 @@ const FeaturesComponent = () => {
               Lightning-Fast Approval
             </Typography>
             <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-              Complete our quick online application in just minutes, with most approvals granted swiftly.
+              Complete our quick online application in just <strong style={{ color: 'black' }}> 5 minutes</strong>, with most approvals granted swiftly.
             </Typography>
           </Paper>
         </Grid>
@@ -150,17 +151,19 @@ const FeaturesComponent = () => {
               '&:hover': {
                 transform: 'scale(1.05)',
               },
+              height: '100%',
             }}
           >
-            <img
+            <Box
+              component="img"
               src={TransferImage}
               alt="Quick Funds Transfer"
-              style={{
-                overflow: 'auto',
-                maxHeight: '100px',
-                width: '100px',
-                height: '100px',
+              sx={{
+                width: { xs: '80px', sm: '100px', md: '120px' },
+                height: { xs: '80px', sm: '100px', md: '120px' },
                 marginBottom: '16px',
+                objectFit: 'cover',
+                borderRadius: '50%',
                 animation: 'zoomIn 3s infinite',
               }}
             />
@@ -168,8 +171,9 @@ const FeaturesComponent = () => {
               Quick Funds Transfer
             </Typography>
             <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-              Receive your approved funds in <strong style={{ color: 'black' }}>5 minutes</strong>, allowing you to tackle expenses without delay.
-            </Typography>
+            Receive your approved funds <strong style={{ color: 'black' }}>instantly</strong>, allowing you to tackle expenses without delay.
+          </Typography>
+
           </Paper>
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -183,17 +187,19 @@ const FeaturesComponent = () => {
               '&:hover': {
                 transform: 'scale(1.05)',
               },
+              height: '100%',
             }}
           >
-            <img
+            <Box
+              component="img"
               src={SupportImage}
               alt="Expert Customer Support"
-              style={{
-                overflow: 'auto',
-                maxHeight: '100px',
-                width: '100px',
-                height: '100px',
+              sx={{
+                width: { xs: '80px', sm: '100px', md: '120px' },
+                height: { xs: '80px', sm: '100px', md: '120px' },
                 marginBottom: '16px',
+                objectFit: 'cover',
+                borderRadius: '50%',
                 animation: 'zoomIn 3s infinite',
               }}
             />
@@ -201,7 +207,7 @@ const FeaturesComponent = () => {
               Expert Customer Support
             </Typography>
             <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-              Our friendly team is always available to assist you with any questions or concerns throughout.
+              Our friendly team is always available to assist you with any questions or concerns throughout in the process.
             </Typography>
           </Paper>
         </Grid>
@@ -216,10 +222,6 @@ const FeaturesComponent = () => {
           @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
-          }
-          @keyframes letterAppear {
-            0% { opacity: 0; transform: translateY(50px); }
-            100% { opacity: 1; transform: translateY(0); }
           }
         `}
       </style>

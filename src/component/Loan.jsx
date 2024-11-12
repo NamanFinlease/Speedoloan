@@ -13,15 +13,9 @@ const Loan = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true); // Trigger animation when visible
-          document.body.style.overflow = 'hidden'; // Disable scrolling on body
-        } else {
-          setIsVisible(false); // Reset animation when out of view
-          document.body.style.overflow = ''; // Re-enable scrolling
-        }
+        setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.03 } // Trigger when 3% of the element is visible
+      { threshold: 0.03 }
     );
 
     if (containerRef.current) {
@@ -36,17 +30,17 @@ const Loan = () => {
   }, []);
 
   return (
-    <Container ref={containerRef} sx={{ mt: 6, overflow: 'hidden' }}> {/* Set overflow to hidden here */}
+    <Container ref={containerRef} sx={{ mt: 6, overflow: 'hidden' }}>
       <Box
         sx={{
           display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' }, // Stack boxes vertically on small screens
-          justifyContent: 'center', // Center boxes
-          alignItems: 'center', // Center align boxes
-          overflow: 'hidden', // Prevent horizontal scroll
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'hidden',
           animation: {
-            xs: 'none', // No animation on small screens
-            md: isVisible ? 'marquee 20s linear infinite' : 'none', // Slow down animation to 20s on medium and larger screens
+            xs: 'none',
+            md: isVisible ? 'marquee 20s linear infinite' : 'none',
           },
         }}
       >
@@ -58,7 +52,7 @@ const Loan = () => {
           <img
             src={AmountImage}
             alt="Loan Amount Icon"
-            style={{ width: 50, height: 50, marginBottom: '8px' }} // Set the same size for all images
+            style={{ width: 50, height: 50, marginBottom: '8px' }}
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             Loan from ₹5000 - ₹100000
@@ -73,7 +67,7 @@ const Loan = () => {
           <img
             src={TenureImage}
             alt="Loan Tenure Icon"
-            style={{ width: 50, height: 50, marginBottom: '8px' }} // Set the same size for all images
+            style={{ width: 50, height: 50, marginBottom: '8px' }}
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             Tenure from 7 to 90 days
@@ -88,7 +82,7 @@ const Loan = () => {
           <img
             src={PaperlessDisbursal}
             alt="Paperless Disbursal Icon"
-            style={{ width: 60, height: 60, marginBottom: '8px' }} // Set the same size for all images
+            style={{ width: 60, height: 60, marginBottom: '8px' }}
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             100% Paperless Verification Process
@@ -103,7 +97,7 @@ const Loan = () => {
           <img
             src={disbursal}
             alt="Instant Disbursal Icon"
-            style={{ width: 70, height: 70, marginBottom: '8px' }} // Set the same size for all images
+            style={{ width: 70, height: 70, marginBottom: '8px' }}
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             Swift Payout
@@ -118,7 +112,7 @@ const Loan = () => {
           <img
             src={UnsecureLoanImage}
             alt="Unsecure Loan Icon"
-            style={{ width: 50, height: 50, marginBottom: '8px' }} // Set the same size for all images
+            style={{ width: 50, height: 50, marginBottom: '8px' }}
           />
           <Typography variant="body1" sx={{ color: 'black' }}>
             Start now
@@ -141,13 +135,13 @@ const Loan = () => {
 
 // Common styles for each box
 const commonBoxStyles = {
-  backgroundColor: 'white', // Changed to dark gray (hex code)
+  backgroundColor: 'white',
   borderRadius: 2,
   padding: 2,
   boxShadow: 3,
   textAlign: 'center',
-  height: { xs: '150px', md: '200px' }, // Smaller height on small screens
-  width: { xs: '90%', md: '300px' }, // Slightly smaller width on small screens
+  height: { xs: '150px', md: '200px' },
+  width: { xs: '90%', md: '300px' },
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -157,7 +151,7 @@ const commonBoxStyles = {
     transform: 'scale(1.05)',
     boxShadow: 6,
   },
-  margin: '16px', // Uniform margin around boxes
+  margin: '16px',
 };
 
 export default Loan;

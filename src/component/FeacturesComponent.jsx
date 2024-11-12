@@ -64,7 +64,7 @@ const FeaturesComponent = () => {
           },
         }}
       >
-        LOAN IN 5 MINUTES 
+      GET LOAN IN 5 MINUTES 
         <br />
         <Typography
           variant="h4"

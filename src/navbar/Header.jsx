@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '50px', backdropFilter: 'blur(5px)' }}>
+      <AppBar position="sticky" sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', borderRadius: '50px', backdropFilter: 'blur(5px)' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'nowrap', minHeight: '64px' }}>
           <Link to="/" onClick={scrollToTop} style={{ display: 'flex', alignItems: 'center' }}>
             <img src={logo} alt="Logo" style={{ width: '100px', height: '90px' }} />

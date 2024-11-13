@@ -53,7 +53,7 @@ const FeaturesComponent = () => {
         sx={{
           marginTop: '50px',
           color: 'black',
-          fontSize: { xs: '1rem', sm: '4rem' },
+          fontSize: { xs: '1.5rem', sm: '4rem' },
           mb: 2,
           fontWeight: 'bold',
           textAlign: 'left',
@@ -71,7 +71,7 @@ const FeaturesComponent = () => {
           sx={{
             marginTop: '50px',
             color: 'black',
-            fontSize: { xs: '1rem', sm: '4rem' },
+            fontSize: { xs: '1.5rem', sm: '4rem' },
             mb: 2,
             fontWeight: 'bold',
             textAlign: 'left',

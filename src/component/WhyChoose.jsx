@@ -52,10 +52,10 @@ const WhyChoose = () => {
                 sx={{ 
                     flex: 2, 
                     paddingLeft: { xs: 0, sm: 2 }, 
-                    textAlign: 'left', // Align text to the left
-                    justifyContent: 'justify', // Justify text alignment
-                    display: 'flex', // Enable flexbox for justify content
-                    flexDirection: 'column', // Stack text vertically
+                    textAlign: 'left', 
+                    justifyContent: 'justify', 
+                    display: 'flex', 
+                    flexDirection: 'column', 
                 }}
             >
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: 'black' }}>
@@ -76,9 +76,9 @@ const WhyChoose = () => {
                         backgroundColor: 'white',
                         color: 'black',
                         textTransform: 'none',
-                        padding: '6px 12px', // Further reduced padding for a smaller button
+                        padding: '6px 12px', 
                         borderRadius: 2,
-                        border: '2px solid gray', // Gray border for the button
+                        border: '2px solid gray', 
                         ':hover': {
                             backgroundColor: '#f0f0f0',
                         },

@@ -1,12 +1,8 @@
 import React from 'react';
-
-import { Box, Container, Grid, Typography, Button } from '@mui/material';
 import LoanProcess from '../component/LoanProcess';
 import LoanCalculator from '../component/LoanCalculator';
 import LoanCalculate from './LoanCalculate';
 import SortFAQ from './SortFAQ';
-import CoreValue from '../component/CoreValue';
-import UnsecuredLoan from '../component/Loan';
 import Process from '../component/Process';
 import FeaturesComponent from '../component/FeacturesComponent';
 import Loan from '../component/Loan';
@@ -17,16 +13,10 @@ function MainContent() {
   return (
     <div>
       <Process/>
-     
-     
-    <FeaturesComponent/>
-    
-          
-      
+      <FeaturesComponent/>
       <LoanCalculator />
       <WhyChoose/>
       <LoanCalculate />
-
       <Loan />
       <LoanProcess />
       <LoanEligibility/>

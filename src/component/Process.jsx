@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import video from '../assets/image/SpeedoLoans (3)-CW8tI7S2 (1) (1).mp4'
+
 const Process = () => {
   const theme = useTheme(); // Access the theme to add custom breakpoints
   const [activeIndex, setActiveIndex] = useState(0); // Track the active carousel index
@@ -39,8 +39,11 @@ const Process = () => {
   playsInline // Ensure it plays inline on mobile
   loading="lazy" // Lazy load when in view
 >
-<source src={video} type="video/mp4" />
-Your browser does not support the video tag.
+  <source
+    src="https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/SpeedoLoans+(3)-CW8tI7S2.mp4"
+    type="video/mp4"
+  />
+  Your browser does not support the video tag.
 </Box>
 
 

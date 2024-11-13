@@ -49,7 +49,6 @@ const FeaturesComponent = () => {
       }}
     >
       <Typography
-        variant="h4"
         sx={{
           marginTop: '50px',
           color: 'black',
@@ -67,7 +66,6 @@ const FeaturesComponent = () => {
       GET LOAN IN 5 MINUTES 
         <br />
         <Typography
-          variant="h4"
           sx={{
             marginTop: '50px',
             color: 'black',
@@ -75,7 +73,7 @@ const FeaturesComponent = () => {
             mb: 2,
             fontWeight: 'bold',
             textAlign: 'left',
-            lineHeight: 1.5,
+            lineHeight: 1,
             '&:hover': {
               color: 'orange',
               transition: 'color 0.5s',

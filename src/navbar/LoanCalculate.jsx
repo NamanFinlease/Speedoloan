@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Grid, Paper, Typography } from '@mui/material';
 import { useInView } from 'react-intersection-observer'; // Import hook
-import backgroundVideo from '../assets/videos/Navy Pink Social Marketer YouTube Thumbnail (2) (2).mp4';
 
 const LoanCalculate = () => {
     const { ref, inView } = useInView({
@@ -33,7 +32,7 @@ const LoanCalculate = () => {
                     zIndex: -1,
                 }}
             >
-                <source src={backgroundVideo} type="video/mp4" />
+                <source src={"https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Navy+Pink+Social+Marketer+YouTube+Thumbnail+(2)+(2)-Dwlc-zzw.mp4"} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 

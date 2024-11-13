@@ -23,7 +23,6 @@ import {
   LocationOn,
 } from '@mui/icons-material';
 import Swal from 'sweetalert2';
-import ApplyNowVideo from '../assets/videos/Apply now.mp4'; // Replace with your video path
 
 const ApplyNow = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -210,7 +209,7 @@ const ApplyNow = () => {
     <div>
       <Box sx={{ position: 'relative', mb: 4 }}>
         <video
-          src={ApplyNowVideo}
+          src={"https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Apply+now-LflBC-eW.mp4"}
           autoPlay
           loop
           muted

@@ -3,7 +3,6 @@ import { TextField, Button, Grid, Typography, Box } from '@mui/material';
 import Swal from 'sweetalert2'; // Import SweetAlert
 import './ContactUs.css'; 
 import aboutImage from '../assets/image/contactus.jpg';
-import leftVideo from '../assets/videos/Bold Sale Brand Website Homepage Banner.mp4';
 
 const ContactUs = () => {
  
@@ -107,7 +106,7 @@ const ContactUs = () => {
         >
           <Box
             component="video"
-            src={leftVideo}
+            src={"https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Bold+Sale+Brand+Website+Homepage+Banner-PL8eYj5a.mp4"}
             autoPlay
             muted
             playsInline

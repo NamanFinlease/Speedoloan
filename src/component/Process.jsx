@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button } from '@mui/material';
-import processVideo from '../assets/videos/SpeedoLoans (3).mp4';
 import { useTheme } from '@mui/material/styles';
 import { Carousel } from 'react-bootstrap';
-import diwaliBanner from '../assets/image/Diwali (1).gif';
 
 const Process = () => {
   const theme = useTheme(); // Access the theme to add custom breakpoints
@@ -39,7 +37,7 @@ const Process = () => {
   muted
   controls={false}
 >
-  <source src={processVideo} type="video/mp4" />
+  <source src={"https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/SpeedoLoans+(3)-CW8tI7S2.mp4"} type="video/mp4" />
   Your browser does not support the video tag.
 </Box>
 

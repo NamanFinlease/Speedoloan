@@ -23,28 +23,30 @@ const Process = () => {
       }}
     >
       
-         <Box
-          component="video"
-          sx={{
-            width: '100%',
-            height: { xs: '20vh', sm: '50vh', md: '80vh' }, // Adjusts height by screen size
-            objectFit: 'cover', // Covers the area without stretching
-            zIndex: 0,
-            backgroundColor: 'transparent',
-          }}
-          autoPlay
-          loop
-          muted
-          controls={false}
-          preload="auto" // Preload video for faster playback
-          playsInline // Ensure it plays inline on mobile
-        >
-          <source
-            src="https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/SpeedoLoans+(3)-CW8tI7S2.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </Box>
+      <Box
+  component="video"
+  sx={{
+    width: '100%',
+    height: { xs: '20vh', sm: '50vh', md: '80vh' }, // Adjusts height by screen size
+    objectFit: 'cover', // Covers the area without stretching
+    zIndex: 0,
+    backgroundColor: 'transparent',
+  }}
+  autoPlay
+  loop
+  muted
+  controls={false}
+  preload="none" // Lazy load the video to save bandwidth
+  playsInline // Ensure it plays inline on mobile
+  loading="lazy" // Lazy load when in view
+>
+  <source
+    src="https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/SpeedoLoans+(3)-CW8tI7S2.mp4"
+    type="video/mp4"
+  />
+  Your browser does not support the video tag.
+</Box>
+
 
         
       

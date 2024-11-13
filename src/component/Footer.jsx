@@ -47,7 +47,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="contact-us" color="inherit" style={{ display: 'flex', alignItems: 'center' }}>
-                  <LocationOn style={{ marginRight: '5px' }} /> Address: S-370, Panchsheel Park, New Delhi 110017, India
+                  <LocationOn style={{ marginRight: '5px',marginTop:'-20px' }} /> Address: S-370, Panchsheel Park, New Delhi 110017, India
                 </Link>
               </li>
             </ul>

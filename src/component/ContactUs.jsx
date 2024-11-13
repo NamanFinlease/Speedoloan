@@ -62,7 +62,7 @@ const ContactUs = () => {
           mt: '20px',
         }}
       >
-        <Typography variant="h2" sx={{ color: 'black', fontWeight: 'bold', '&:hover': { color: 'orange' } }}>
+        <Typography variant="h3" sx={{ color: 'black', fontWeight: 'bold', '&:hover': { color: 'orange' } }}>
           Ask for your query
         </Typography>
         <Grid container spacing={3} justifyContent="center" mt={3}>
@@ -73,17 +73,28 @@ const ContactUs = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Box className="hover-box" sx={{ padding: '30px', transition: '0.3s', borderRadius: '10px', textAlign: 'center' }}>
-              <i className="fas fa-phone-alt"></i>
+            <Box className="hover-box" sx={{ padding: '30px', transition: '0.3s', borderRadius: '10px', textAlign: 'center'  }}>
+              <i className="fas fa-phone-alt" style={{transform: 'rotate(90deg)'}}></i>
               <Typography>Phone: +91 90999 09941</Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <Box className="hover-box" sx={{ padding: '30px', transition: '0.3s', borderRadius: '10px', textAlign: 'center' }}>
-              <i className="fas fa-map-marker-alt"></i>
-              <Typography>Address: S-370, Panchsheel Park, New Delhi 110017, India</Typography>
-            </Box>
-          </Grid>
+                <Grid item xs={12} sm={4}>
+        <Box
+          className="hover-box"
+          sx={{
+            padding: '30px',
+            transition: '0.3s',
+            borderRadius: '10px',
+            textAlign: 'left',
+            display: 'flex',
+            alignItems: 'center', // Vertically aligns icon and text
+          }}
+        >
+          <Box component="i" className="fas fa-map-marker-alt" sx={{ fontSize: '24px', marginRight: '10px' }} />
+          <Typography style={{marginTop:"20px"}}>Address: S-370, Panchsheel Park, New Delhi 110017, India</Typography>
+        </Box>
+      </Grid>
+
         </Grid>
       
         <Grid container spacing={3} justifyContent="center" mt={3}>

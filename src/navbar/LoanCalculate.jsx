@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Grid, Paper, Typography } from '@mui/material';
-import { useInView } from 'react-intersection-observer'; // Import hook
+import { useInView } from 'react-intersection-observer';
 
 const LoanCalculate = () => {
     const { ref, inView } = useInView({
@@ -61,11 +61,10 @@ const LoanCalculate = () => {
                                 padding: 3,
                                 backgroundColor: 'rgba(255, 255, 255, 0.7)',
                                 color: '#000',
-                                minHeight: '250px', // Ensure all boxes have a minimum height
+                                minHeight: '250px',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
-                                alignItems: 'flex-start',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease',
                                 opacity: inView ? 1 : 0,
                                 transform: inView ? 'translateY(0)' : 'translateY(-20px)',
@@ -77,31 +76,31 @@ const LoanCalculate = () => {
                                 },
                             }}
                         >
-                            <span style={{
-                                position: 'absolute',
-                                top: '20px',
-                                left: '15px',
-                                fontSize: '24px',
-                                color: 'white',
-                                backgroundColor: 'darkgray',
-                                borderRadius: '50%',
-                                width: '50px',
-                                height: '50px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                transition: 'background-color 0.3s ease, color 0.3s ease',
-                            }}>
-                                {index + 1}
-                            </span>
-                            <Typography variant="h6" component="strong" color="inherit" sx={{ mt: 6, ml: 6 }}>
-                                {title}
-                            </Typography>
-                            <Typography variant="body2" color="inherit" sx={{ mt: 1, ml: 6 }}>
-                                {title === "Health" && "At SpeedoLoan we provide immediate financial assistance by way of loan, for your any untimely medical bill or emergency. You can take care of your loved ones without any financial fear!"}
-                                {title === "Unexpected Expenses" && "SpeedoLoan helps you handle unexpected expenses swiftly. Whether it's a medical bill, car repair, or wedding costs, our quick application gets you funds in as little as 5 minutes. With flexible loan options."}
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <span style={{
+                                    fontSize: '24px',
+                                    color: 'white',
+                                    backgroundColor: 'darkgray',
+                                    borderRadius: '50%',
+                                    width: '50px',
+                                    height: '50px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginRight: '16px',
+                                    transition: 'background-color 0.3s ease, color 0.3s ease',
+                                }}>
+                                    {index + 1}
+                                </span>
+                                <Typography variant="h6" component="strong" color="inherit">
+                                    {title}
+                                </Typography>
+                            </div>
+                            <Typography variant="body2" color="inherit" sx={{ mt: 1 }}>
+                                {title === "Health" && "At SpeedoLoan we provide immediate financial assistance by way of loan, for your untimely medical bills or emergencies. You can take care of your loved ones without any financial fears!"}
+                                {title === "Unexpected Expenses" && "SpeedoLoan helps you handle unexpected expenses swiftly. Whether it's a medical bill, car repair, or wedding costs, our quick application gets you funds in as little as 5 minutes with flexible loan options."}
                                 {title === "Credit Card Pay" && "At SpeedoLoan, we consolidate your high-interest loans into a single loan with fixed terms, allowing you to manage your payments more easily and pay off debt faster!"}
-                                {title === "Vacation" && "Your well-deserved vacation doesn’t have to be put on hold due to a lack of finances! With our Speedo loan service, you can enjoy your dream trip without delay!"}
+                                {title === "Vacation" && "Your well-deserved vacation doesn’t have to be put on hold due to a lack of finances! With our Speedo loan service, you can enjoy your dream trip without any delay!"}
                             </Typography>
                         </Paper>
                     </Grid>

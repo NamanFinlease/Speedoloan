@@ -9,24 +9,24 @@ import { SvgIcon } from '@mui/material';
 // Loan steps data
 const loanSteps = [
   {
-    icon: <HowToRegIcon fontSize="large" sx={{ color: 'orange' }} />, // Set icon color to orange
+    icon: <HowToRegIcon fontSize="large" sx={{ color: 'orange' }} />,
     title: "Apply Online",
     description: "Click on Apply Now, Fill out our quick and easy online application."
   },
   {
-    icon: <VerifiedUserIcon fontSize="large" sx={{ color: 'orange' }} />, // Set icon color to orange
+    icon: <VerifiedUserIcon fontSize="large" sx={{ color: 'orange' }} />,
     title: "Paperless Verification",
-    description: "We do paperless verification even for first time users."
+    description: "We do paperless verification even for first-time users."
   },
   {
-    icon: <AccountBalanceIcon fontSize="large" sx={{ color: 'orange' }} />, // Set icon color to orange
+    icon: <AccountBalanceIcon fontSize="large" sx={{ color: 'orange' }} />,
     title: "Loan Approval",
     description: "Our team reviews and approves your loan in just 5 minutes."
   },
   {
-    icon: <CurrencyRupeeIcon fontSize="large" sx={{ color: 'orange' }} />, // Set icon color to orange
+    icon: <CurrencyRupeeIcon fontSize="large" sx={{ color: 'orange' }} />,
     title: "Receive Funds",
-    description: "Funds are deposited into your bank account."
+    description: "Funds are deposited into your bank account instantly."
   },
 ];
 
@@ -56,16 +56,18 @@ const LoanProcessDiagram = () => {
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Intersection observer for animation trigger
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true); // Component is in view
-        } else {
-          setInView(false); // Component is out of view
-        }
+        setInView(entry.isIntersecting);
       },
-      { threshold: 0.1 } // Trigger when 10% of the component is in view
+      { threshold: 0.1 }
     );
 
     if (ref.current) {
@@ -81,19 +83,18 @@ const LoanProcessDiagram = () => {
     <Box
       ref={ref}
       sx={{
-        backgroundColor: "#fff", // White background for the entire container
+        backgroundColor: "#fff",
         py: 6,
-        px: 5,
+        px: { xs: 2, sm: 5 }, // Responsive padding
         textAlign: "center",
         position: 'relative',
-        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", // Optional shadow for the entire container
-        borderRadius: "40px", // Set border radius to 40px
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+        borderRadius: "40px",
+        overflowX: "hidden", // Prevent horizontal overflow
       }}
     >
-      <Typography variant="h4" sx={{ color: 'black', mb: 5 ,"&:hover": {
-                  color: "orange"
-                }}}> {/* Change heading color to orange */}
-        <h2 style={{fontSize:"48px"}}>Good Credit, Bad Credit! We don't discriminate</h2>
+      <Typography variant="h4" sx={{ color: 'black', mb: 5, "&:hover": { color: "orange" } }}>
+        <h2 style={{ fontSize: { xs: "32px", sm: "48px" } }}>Good Credit, Bad Credit! We don't discriminate</h2>
         <h4>At Speedo Loan, we want to help you get your funds in emergency or to re-build your credit score.</h4>
       </Typography>
 
@@ -110,8 +111,8 @@ const LoanProcessDiagram = () => {
               alignItems: "center",
               position: 'relative',
               mb: 5,
-              mx: 4,
-              animation: inView ? `slideInRight 0.5s ease forwards` : 'none', // Animate when in view
+              mx: { xs: 2, sm: 4 },
+              animation: inView ? `slideInRight 0.5s ease forwards` : 'none',
               '@keyframes slideInRight': {
                 '0%': { opacity: 0, transform: "translateX(100px)" },
                 '100%': { opacity: 1, transform: "translateX(0)" },
@@ -123,21 +124,27 @@ const LoanProcessDiagram = () => {
                 backgroundColor: "#fff",
                 borderRadius: "50%",
                 padding: 4,
-                border: '2px solid lightgray', // Set border color to light gray
-                boxShadow: "0 12px 36px rgba(0, 0, 0, 0.15)", // Enhanced shadow for the circles
+                border: '2px solid lightgray',
+                boxShadow: "0 12px 36px rgba(0, 0, 0, 0.15)",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                width: "130px",
-                height: "130px",
+                width: { xs: "80px", sm: "130px" },
+                height: { xs: "80px", sm: "130px" },
                 mb: 2,
-                transition: "transform 0.3s ease-in-out",
-                "&:hover": {
-                  transform: "rotate(360deg) scale(1.15)"
-                }
               }}
             >
-              {step.icon}
+              {/* Rotating icon only */}
+              <Box
+                sx={{
+                  transition: "transform 0.3s ease-in-out",
+                  "&:hover": {
+                    transform: "rotate(360deg)"
+                  }
+                }}
+              >
+                {step.icon}
+              </Box>
             </Box>
             <Typography variant="h6" gutterBottom>
               {step.title}

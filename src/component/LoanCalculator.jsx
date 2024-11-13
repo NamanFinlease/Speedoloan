@@ -20,15 +20,15 @@ import { useInView } from 'react-intersection-observer';
 import { keyframes } from '@mui/system';
 import { Link } from 'react-router-dom';
 
-import WhatsAppImage from '../assets/image/what.png';
-import FacebookImage from '../assets/image/facebook.png';
-import InstagramImage from '../assets/image/instagram.jpg';
+import WhatsAppImage from '../assets/webp/what-C_g1QWKx.webp';
+import FacebookImage from '../assets/webp/11.webp';
+import InstagramImage from '../assets/webp/12.webp';
 import TwitterImage from '../assets/image/twiter.png';
 import YouTubeImage from '../assets/image/youtube1.png';
 
-import expert1 from '../assets/image/WhatsApp Image 2024-10-23 at 5.56.46 PM.jpeg';
-import expert2 from '../assets/image/passport1.jpg';
-import expert3 from '../assets/image/passport3.jpg';
+import expert1 from '../assets/webp/WhatsApp Image 2024-10-23 at 5.56.46 PM-D1LZ1HRq.webp';
+import expert2 from '../assets/webp/14.webp';
+import expert3 from '../assets/webp/15.webp';
 import EditIcon from '@mui/icons-material/Edit';
 import SaveIcon from '@mui/icons-material/Save';
 
@@ -273,7 +273,7 @@ const LoanCalculator = () => {
                           
                     
                             <Box sx={{ display: 'flex', justifyContent: 'start', gap: 2, marginBottom: 3 }}>
-    <Link to="wa.me/919099909941">
+    <Link to="https://wa.me/919099909941">
         <img src={WhatsAppImage} alt="WhatsApp" style={{ width: '30px', height: '30px' }} />
     </Link>
     <Link to="https://www.facebook.com/profile.php?id=61567546377871">
@@ -286,7 +286,7 @@ const LoanCalculator = () => {
     <Link to="https://x.com/speedo_loan">
         <img src={TwitterImage} alt="Twitter" style={{ width: '30px', height: '30px' }} />
     </Link>
-    <Link to="https://www.youtube.com/@SpeedLoans" >
+    <Link to="https://www.youtube.com/@SpeedoLoan" >
         <img src={YouTubeImage} alt="YouTube" style={{ width: '30px', height: '30px' }} />
     </Link>
 </Box>

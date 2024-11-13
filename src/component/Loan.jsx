@@ -3,8 +3,8 @@ import { Box, Typography, Container } from '@mui/material';
 import AmountImage from '../assets/image/rupees.png'; // Replace with your amount icon image path
 import TenureImage from '../assets/image/tenure.png'; // Replace with your tenure icon image path
 import UnsecureLoanImage from '../assets/image/unsecure.png'; // Replace with your unsecure loan icon image path
-import PaperlessDisbursal from '../assets/image/Downloader-La-364604.jpg';
-import disbursal from '../assets/image/Downloader-La-525916.jpg';
+import PaperlessDisbursal from '../assets/webp/7.webp';
+import disbursal from '../assets/webp/9.webp';
 
 const Loan = () => {
   const [isVisible, setIsVisible] = useState(false);

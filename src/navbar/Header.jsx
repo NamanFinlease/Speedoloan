@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { IconButton, AppBar, Toolbar, Typography, Box, Menu as MUI_Menu, MenuItem } from '@mui/material';
+import { Link, useLocation } from 'react-router-dom';
+import { IconButton, AppBar, Toolbar, Box, Menu as MUI_Menu, MenuItem } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PaymentIcon from '@mui/icons-material/Payment';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
-import logo from '../assets/image/Speedoloan.png'; // Adjust the path based on your structure
+import logo from '../assets/webp/18.webp';
 import { Menu } from '@mui/icons-material';
 import { keyframes } from '@mui/system';
 
@@ -18,6 +18,13 @@ const blinkAnimation = keyframes`
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const location = useLocation(); // Detects route changes
+
+  // Function to scroll to top of the page
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -28,17 +35,16 @@ const Header = () => {
 
   return (
     <>
-      {/* Navbar */}
       <AppBar position="sticky" sx={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', borderRadius: '50px', backdropFilter: 'blur(5px)' }}>
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'nowrap', minHeight: '64px' }}> {/* Ensured minHeight consistency */}
-          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={logo} alt="Logo" style={{ width: '120px', height: '100px' }} />
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'nowrap', minHeight: '64px' }}>
+          <Link to="/" onClick={scrollToTop} style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={logo} alt="Logo" style={{ width: '100px', height: '90px' }} />
           </Link>
           <IconButton
             edge="end"
             color="inherit"
             onClick={handleMenu}
-            sx={{ display: { xs: 'block', md: 'none' }, color: '#0b2747', padding: '8px' }} // Adjusted padding for better icon placement
+            sx={{ display: { xs: 'block', md: 'none' }, color: '#0b2747', padding: '8px' }}
           >
             <Menu />
           </IconButton>
@@ -46,45 +52,30 @@ const Header = () => {
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={handleClose}
-            sx={{ display: { xs: 'block', md: 'none' }, '& .MuiPaper-root': { zIndex: 900 } }} // Display menu only on small screens
+            sx={{ display: { xs: 'block', md: 'none' }, '& .MuiPaper-root': { zIndex: 900 } }}
           >
             <MenuItem onClick={handleClose}>
-              <Link
-                to="/"
-                style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}
-              >
+              <Link to="/" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}>
                 <HomeIcon sx={{ mr: 1 }} /> HOME
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link
-                to="/about-us"
-                style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}
-              >
+              <Link to="/about-us" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}>
                 <InfoIcon sx={{ mr: 1 }} /> ABOUT US
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link
-                to="/apply-now"
-                style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}
-              >
+              <Link to="/apply-now" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}>
                 <AssignmentIcon sx={{ mr: 1 }} /> APPLY NOW
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link
-                to="/repay-now"
-                style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}
-              >
+              <Link to="/repay-now" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}>
                 <PaymentIcon sx={{ mr: 1 }} /> REPAY NOW
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link
-                to="/contact-us"
-                style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}
-              >
+              <Link to="/contact-us" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', animation: `${blinkAnimation} 1s infinite` }}>
                 <ContactMailIcon sx={{ mr: 1 }} /> CONTACT US
               </Link>
             </MenuItem>
@@ -92,91 +83,25 @@ const Header = () => {
           <Box
             sx={{
               display: { xs: 'none', md: 'flex' },
-              justifyContent: 'flex-end', // Align links to the right
+              justifyContent: 'flex-end',
               flexGrow: 1,
               ml: 2,
-              gap: '1rem', // Slightly decreased space between links
+              gap: '1rem',
             }}
           >
-            {/** Navigation Links */}
-            <Link
-              to="/"
-              style={{
-                color: '#0b2747', // Normal color before hover
-                display: 'flex',
-                alignItems: 'center',
-                position: 'relative',
-                textDecoration: 'none',
-                padding: '8px', // Added padding for better hover effect
-                transition: 'color 0.3s ease', // Smooth transition
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#B76E1D')} // Darker orange
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#0b2747')}
-            >
+            <Link to="/" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', textDecoration: 'none', padding: '8px', transition: 'color 0.3s ease' }}>
               <HomeIcon sx={{ mr: 1 }} /> HOME
             </Link>
-            <Link
-              to="/about-us"
-              style={{
-                color: '#0b2747', // Normal color before hover
-                display: 'flex',
-                alignItems: 'center',
-                position: 'relative',
-                textDecoration: 'none',
-                padding: '8px', // Added padding for better hover effect
-                transition: 'color 0.3s ease', // Smooth transition
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#B76E1D')} // Darker orange
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#0b2747')}
-            >
+            <Link to="/about-us" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', textDecoration: 'none', padding: '8px', transition: 'color 0.3s ease' }}>
               <InfoIcon sx={{ mr: 1 }} /> ABOUT US
             </Link>
-            <Link
-              to="/apply-now"
-              style={{
-                color: '#0b2747', // Normal color before hover
-                display: 'flex',
-                alignItems: 'center',
-                position: 'relative',
-                textDecoration: 'none',
-                padding: '8px', // Added padding for better hover effect
-                transition: 'color 0.3s ease', // Smooth transition
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#B76E1D')} // Darker orange
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#0b2747')}
-            >
+            <Link to="/apply-now" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', textDecoration: 'none', padding: '8px', transition: 'color 0.3s ease' }}>
               <AssignmentIcon sx={{ mr: 1 }} /> APPLY NOW
             </Link>
-            <Link
-              to="/repay-now"
-              style={{
-                color: '#0b2747', // Normal color before hover
-                display: 'flex',
-                alignItems: 'center',
-                position: 'relative',
-                textDecoration: 'none',
-                padding: '8px', // Added padding for better hover effect
-                transition: 'color 0.3s ease', // Smooth transition
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#B76E1D')} // Darker orange
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#0b2747')}
-            >
+            <Link to="/repay-now" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', textDecoration: 'none', padding: '8px', transition: 'color 0.3s ease' }}>
               <PaymentIcon sx={{ mr: 1 }} /> REPAY NOW
             </Link>
-            <Link
-              to="/contact-us"
-              style={{
-                color: '#0b2747', // Normal color before hover
-                display: 'flex',
-                alignItems: 'center',
-                position: 'relative',
-                textDecoration: 'none',
-                padding: '8px', // Added padding for better hover effect
-                transition: 'color 0.3s ease', // Smooth transition
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#B76E1D')} // Darker orange
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#0b2747')}
-            >
+            <Link to="/contact-us" onClick={scrollToTop} style={{ color: '#0b2747', display: 'flex', alignItems: 'center', textDecoration: 'none', padding: '8px', transition: 'color 0.3s ease' }}>
               <ContactMailIcon sx={{ mr: 1 }} /> CONTACT US
             </Link>
           </Box>

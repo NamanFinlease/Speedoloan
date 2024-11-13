@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BankOfbadoda from '../assets/image/baroda-logo.png'; 
-import repayLoanBanner from '../assets/image/WhatsApp Image 2024-10-22 at 5.46.57 PM.jpeg';
+import BankOfbadoda from '../assets/webp/5.webp'; 
+import repayLoanBanner from '../assets/webp/WhatsApp Image 2024-10-22 at 5.46.57 PM-bJ9mMvwU.webp';
 
 import { Container, Grid, Box, TextField, Button, Typography } from '@mui/material';
 

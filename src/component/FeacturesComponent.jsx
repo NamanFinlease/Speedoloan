@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Box, Typography, Grid, Paper } from '@mui/material';
-import LightningImage from '../assets/image/59958508-1e60-4c85-bf87-3cb6b94b0179.jpg'; // Replace with your actual image path
-import TransferImage from '../assets/image/1.png'; // Replace with your actual image path
-import SupportImage from '../assets/image/237f14aa-217e-406d-b6c4-f88b29a20bc9 (1).jpg'; // Replace with your actual image path
+import LightningImage from '../assets/webp/3.webp'; 
+import TransferImage from '../assets/webp/1.webp'; 
+import SupportImage from '../assets/webp/2.webp'; 
 
 const FeaturesComponent = () => {
   const boxRef = useRef(null);
@@ -101,7 +101,8 @@ const FeaturesComponent = () => {
         >
           Tired of lenders collecting your information only to deny your applications?
           <br />
-          At Speedoloan, we offer a 100% better solution.
+          At Speedoloan, We're proud to offer a solution that's notably, <br />
+          designed to exceed your expectations.
         </Typography>
       </Typography>
       <Grid container spacing={3} justifyContent="center" sx={{ mt: 4 }}>

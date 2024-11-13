@@ -1,7 +1,6 @@
 import React from 'react';
 import { Typography, Grid, Paper, Box, Container,Button } from '@mui/material';
 import ApplicationIcon from '@mui/icons-material/Assignment'; // Example icon
-import UploadIcon from '@mui/icons-material/Upload';
 import VerificationIcon from '@mui/icons-material/CheckCircle';
 import ApprovalIcon from '@mui/icons-material/Check'; // Make sure this line is included
 import RepaymentIcon from '@mui/icons-material/Payment'; // Example icon for repayment
@@ -9,9 +8,9 @@ import RepaymentIcon from '@mui/icons-material/Payment'; // Example icon for rep
 import { Link } from 'react-router-dom';
 import './AboutUs.css'; 
 
-import visionImage from '../assets/image/vison.jpg'; // import vision image 
-import missionImage from '../assets/image/mission.jpg'; // Import mission image
-import aboutUsImage from '../assets/image/aboutus (2).jpg'; // Import about us image
+import visionImage from '../assets/webp/vison-DBwR7l0z.webp'; // import vision image 
+import missionImage from '../assets/webp/13.webp'; // Import mission image
+import aboutUsImage from '../assets/webp/4.webp'; // Import about us image
 import familyImage from '../assets/image/Downloader-La-270835.jpg'; // Import your rounded person image
 
 const AboutUs = () => {

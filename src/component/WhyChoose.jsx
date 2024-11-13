@@ -6,7 +6,7 @@ import {
     Paper
 } from '@mui/material';
 import { Link } from 'react-router-dom';
-import yourImage from '../assets/image/Downloader-La-489506.jpg'; // Replace with your image path
+import yourImage from '../assets/webp/8.webp'; 
 
 const WhyChoose = () => {
     return (
@@ -63,7 +63,7 @@ const WhyChoose = () => {
                 </Typography>
                 
                 <Typography variant="body1" paragraph sx={{ textAlign: 'justify' }}>
-                    With Speedo Loan, you don’t have to wait days for financial assistance. Skip the hassle and get a fast loan processing experience that puts cash in your bank quickly. Our streamlined application process allows you to secure funds in as little as 5 minutes with our Fast Process.
+                    With Speedo Loan, you don’t have to wait for days for financial assistance. Skip the hassle and get a fast loan processing experience that puts cash in your bank quickly. Our streamlined application process allows you to secure funds in as little as 5 minutes with our Fast Process.
                 </Typography>
 
                 {/* "Let's Get Started" Button */}

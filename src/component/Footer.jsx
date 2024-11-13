@@ -1,7 +1,7 @@
 import React from 'react';
 import { Email, Phone, LocationOn, Facebook, Twitter, LinkedIn, Instagram, YouTube } from '@mui/icons-material'; 
 import { Container, Grid, Typography, Link, Box } from '@mui/material';
-import backgroundImage from '../assets/image/footer.jpg'; // Adjust the path to your image
+import backgroundImage from '../assets/webp/10.webp'; // Adjust the path to your image
 
 const Footer = () => {
   return (
@@ -84,7 +84,7 @@ const Footer = () => {
                 <Link href="https://x.com/speedo_loan" sx={{ ...iconStyle, backgroundColor: '#1DA1F2' }}><Twitter /></Link>
                 <Link href="https://www.linkedin.com/company/speedo-loan/about/?viewAsMember=true " target="_blank" sx={{ ...iconStyle, backgroundColor: '#0077B5' }}><LinkedIn /></Link>
                 <Link href=" https://www.instagram.com/speedo.loan/" target="_blank" sx={{ ...iconStyle, backgroundColor: '#C13584' }}><Instagram /></Link>
-                <Link href="https://www.youtube.com/@SpeedLoans" target="_blank" sx={{ ...iconStyle, backgroundColor: '#FF0000' }}><YouTube /></Link>
+                <Link href="https://www.youtube.com/@SpeedoLoan" target="_blank" sx={{ ...iconStyle, backgroundColor: '#FF0000' }}><YouTube /></Link>
               </Box>
 
 

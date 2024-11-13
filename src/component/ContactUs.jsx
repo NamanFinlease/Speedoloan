@@ -2,7 +2,7 @@ import React from 'react';
 import { TextField, Button, Grid, Typography, Box } from '@mui/material';
 import Swal from 'sweetalert2'; // Import SweetAlert
 import './ContactUs.css'; 
-import aboutImage from '../assets/image/contactus.jpg';
+import aboutImage from '../assets/webp/6.webp';
 
 const ContactUs = () => {
  

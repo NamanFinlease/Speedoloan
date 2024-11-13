@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, Typography, Container, Paper, Divider, Slide } from '@mui/material';
 import { Fade } from '@mui/material';
-import privacyImage from '../assets/image/policyprivacy.png'; // Ensure this path is correct
+import privacyImage from '../assets/webp/16.webp'; // Ensure this path is correct
 
 const PrivacyPolicy = () => {
     const sections = [

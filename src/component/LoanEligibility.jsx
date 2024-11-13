@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
-import leftImage from '../assets/image/sad.jpg'; // Adjust the path to your image
+import leftImage from '../assets/webp/17.webp'; // Adjust the path to your image
 
 const LoanEligibility = () => {
   return (

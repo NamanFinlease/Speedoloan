@@ -103,34 +103,34 @@ const ContactUs = () => {
       </Box>
 
             {/* Contact Us Form */}
-            <Grid container spacing={2} mt={5}>
+            <Grid container spacing={2} mt={5} mb={5}>
         {/* Left Video */}
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          sx={{
-            display: 'flex', // Use flexbox to align content
-            justifyContent: { xs: 'center', sm: 'flex-start', md: 'center' }, // Center on mobile and laptop, left-align on small devices
-            alignItems: 'center', // Vertically center the video
-          }}
-        >
-          <Box
-            component="video"
-            src={"https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Bold+Sale+Brand+Website+Homepage+Banner-PL8eYj5a.mp4"}
-            autoPlay
-            muted
-            playsInline
+           <Grid
+            item
+            xs={12}
+            sm={6}
             sx={{
-              width: { xs: '100%', sm: '80%', md: '90%' }, // Full width on mobile, 80% on small screens, 90% on laptops
-              height: 'auto', // Maintain aspect ratio
-              objectFit: 'cover',
-              borderRadius: '8px',
-              mt: { xs: 2, sm: 10 }, // Smaller margin-top on mobile, larger on bigger screens
-              ml: { sm: 10, md: 0 }, // Add margin-left on small screens only, none on laptops
+              display: 'flex',
+              flexDirection: 'column', // Stack the video and map vertically
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
-          />
-        </Grid>
+          >
+            
+            
+            <Box
+              component="iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.246459582324!2d-122.08574968468185!3d37.42206527982659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5c44d6b41d3%3A0x30a9d6a89a2384e!2sGoogleplex!5e0!3m2!1sen!2sus!4v1614693744843!5m2!1sen!2sus"
+              sx={{
+                width: { xs: '100%', sm: '80%', md: '90%' },
+                height: '450px', // Set an appropriate height for the map
+                border: 0,
+                borderRadius: '8px',
+              }}
+              allowFullScreen
+              loading="lazy"
+            />
+          </Grid>
 
  
         {/* Right Contact Form */}

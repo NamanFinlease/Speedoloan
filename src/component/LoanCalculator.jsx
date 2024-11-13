@@ -273,7 +273,7 @@ const LoanCalculator = () => {
                           
                     
                             <Box sx={{ display: 'flex', justifyContent: 'start', gap: 2, marginBottom: 3 }}>
-    <Link to="https://whatsapp.com">
+    <Link to="wa.me/919099909941">
         <img src={WhatsAppImage} alt="WhatsApp" style={{ width: '30px', height: '30px' }} />
     </Link>
     <Link to="https://www.facebook.com/profile.php?id=61567546377871">

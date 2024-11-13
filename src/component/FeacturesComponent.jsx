@@ -53,7 +53,7 @@ const FeaturesComponent = () => {
         sx={{
           marginTop: '50px',
           color: 'black',
-          fontSize: { xs: '1rem', sm: '3rem' },
+          fontSize: { xs: '1rem', sm: '4rem' },
           mb: 2,
           fontWeight: 'bold',
           textAlign: 'left',
@@ -136,7 +136,7 @@ const FeaturesComponent = () => {
               Lightning-Fast Approval
             </Typography>
             <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-              Complete our quick online application in just <strong style={{ color: 'black' }}> 5 minutes</strong>, with most approvals granted swiftly.
+              Complete our quick online application in just <strong style={{ color: 'black' }}> 5 minutes</strong>, with approvals granted swiftly.
             </Typography>
           </Paper>
         </Grid>
@@ -207,7 +207,7 @@ const FeaturesComponent = () => {
               Expert Customer Support
             </Typography>
             <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-              Our friendly team is always available to assist you with any questions or concerns throughout in the process.
+              Our friendly team is always available to assist you with any questions or concerns throughout the process.
             </Typography>
           </Paper>
         </Grid>

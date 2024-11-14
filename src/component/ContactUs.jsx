@@ -148,7 +148,7 @@ const ContactUs = () => {
             }}
           >
             <Typography variant="h4" gutterBottom textAlign="center">
-              Get in Touch tttttttttt
+              Get in Touch 
             </Typography>
             
             <Grid container spacing={2}>

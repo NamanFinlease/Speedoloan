@@ -69,7 +69,7 @@ const Footer = () => {
             <ul style={{ listStyleType: 'none', padding: 0, margin: '20px' }}>
               <li><Link href="terms-condition" color="inherit" sx={linkStyle}><i className="fa fa-angle-right" /> Terms & Condition</Link></li>
               <li><Link href="privacy-policy" color="inherit" sx={linkStyle}><i className="fa fa-angle-right" /> Privacy Policy</Link></li>
-              <li><Link href="fqa" color="inherit" sx={linkStyle}><i className="fa fa-angle-right" /> FAQs</Link></li>
+              <li><Link href="faq" color="inherit" sx={linkStyle}><i className="fa fa-angle-right" /> FAQs</Link></li>
             </ul>
           </Grid>
 

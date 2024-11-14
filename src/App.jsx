@@ -31,7 +31,7 @@ function App() {
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
         <Route path='/terms-condition' element={<TermsAndConditions/>}/>
         <Route path='/repay-now' element={<RepayLoan/>}/>
-        <Route path='/fqa' element={<FAQs/>}/>
+        <Route path='/faq' element={<FAQs/>}/>
 
       </Routes>
       <Footer />

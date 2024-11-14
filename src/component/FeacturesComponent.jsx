@@ -99,7 +99,7 @@ const FeaturesComponent = () => {
         >
           Tired of lenders collecting your information only to deny your applications?
           <br />
-          At Speedoloan, We're proud to offer a solution that's notably, <br />
+          At Speedoloan, We're proud to offer a solution that's notably better, <br />
           designed to exceed your expectations.
         </Typography>
       </Typography>

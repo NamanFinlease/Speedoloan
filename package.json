@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run generate-sitemap && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -28,6 +29,7 @@
     "react-intersection-observer": "^9.13.1",
     "react-router-dom": "^6.26.2",
     "react-slick": "^0.30.2",
+    "sitemap": "^8.0.0",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.6.13",
     "swiper": "^11.1.14"

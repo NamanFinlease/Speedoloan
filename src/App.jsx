@@ -32,7 +32,6 @@ function App() {
         <Route path='/terms-condition' element={<TermsAndConditions/>}/>
         <Route path='/repay-now' element={<RepayLoan/>}/>
         <Route path='/faq' element={<FAQs/>}/>
-
       </Routes>
       <Footer />
     </Router>

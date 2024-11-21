@@ -3,6 +3,7 @@ import { Box, Typography, Container, Paper, Divider } from '@mui/material';
 import { Fade } from '@mui/material';
 
 const TermsAndConditions = () => {
+    
     return (
         <div>
            
@@ -38,7 +39,7 @@ const TermsAndConditions = () => {
                 gutterBottom
                 sx={{ fontWeight: 'bold' }}
             >
-                Welcome to <Speedoloan></Speedoloan>. These Terms and Conditions ("Terms") govern your access to and use of our platform and services. By using Speedoloan, you agree to comply with and be bound by these Terms. If you do not agree, please discontinue using our services.
+                Welcome to Speedoloan. These Terms and Conditions ("Terms") govern your access to and use of our platform and services. By using Speedoloan, you agree to comply with and be bound by these Terms. If you do not agree, please discontinue using our services.
                 Please read these Terms carefully to understand your rights and obligations when applying for loans through our platform.
             </Typography>
         </Box>

@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
         {
             title: "1. Information We Collect",
             content: [
-                "When you interact with Speedoloan.com, we may collect the following types of information:",
+                "When you interact with Speedoloan, we may collect the following types of information:",
                 "• Personal Identification Information: Name, email address, phone number, physical address, date of birth, PAN, Aadhar details, etc.",
                 "• Financial Information: Bank account details, income statements, GST Number, credit history when applying for a loan, statement of bank account, etc.",
             ]
@@ -29,14 +29,13 @@ const PrivacyPolicy = () => {
             content: [
                 "We do not sell or rent your personal information to third parties. However, we may share your data under the following circumstances:",
                 "• With trusted third-party service providers who help us in delivering our services (e.g., payment processors, verification agencies).",
-                "• To comply with legal obligations, regulatory requests, or to protect the rights and safety of Speedoloan.com and its users.",
-                "• With Naman Finlease Private Limited, our parent NBFC, for the purpose of processing loan applications and facilitating transactions.",
+                "• To comply with legal obligations, regulatory requests, or to protect the rights and safety of Speedoloan and its users.",
             ]
         },
         {
             title: "4. Data Security",
             content: [
-                "Speedoloan.com takes appropriate measures to protect your personal and financial data. We use industry-standard encryption methods and secure servers to prevent unauthorized access, data breaches, or misuse of information.",
+                "Speedoloan takes appropriate measures to protect your personal and financial data. We use industry-standard encryption methods and secure servers to prevent unauthorized access, data breaches, or misuse of information.",
             ]
         },
         {
@@ -58,7 +57,7 @@ const PrivacyPolicy = () => {
         {
             title: "7. Third-Party Links",
             content: [
-                "Speedoloan.com may contain links to third-party websites. We are not responsible for the privacy practices of these external sites and encourage you to review their respective privacy policies.",
+                "Speedoloan may contain links to third-party websites. We are not responsible for the privacy practices of these external sites and encourage you to review their respective privacy policies.",
             ]
         },
         {
@@ -71,7 +70,7 @@ const PrivacyPolicy = () => {
             title: "9. Contact Us",
             content: [
                 "If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:",
-                "Email: info@Speedoloan.com",
+                "Email: infospeedoloan.com",
                 "Phone: +91 90999 09941",
                 "Address: S-370, Panchsheel Park, New Delhi 110017, India",
             ]

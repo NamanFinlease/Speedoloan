@@ -146,6 +146,8 @@ const LoanCalculator = () => {
                             </Typography>
                             <Slider
                                 value={interestRate}
+                                min={0.5}
+                                step={0.1}
                                 max={1}
                                 onChange={handleInterestRateChange}
                                 valueLabelDisplay="auto"

@@ -55,21 +55,21 @@ const FeaturesComponent = () => {
           fontSize: { xs: '0.5rem', sm: '1.2rem' },
           mb: 2,
           textAlign: 'left',
-          lineHeight: 1.5,
+          lineHeight: 1,
           '&:hover': {
             color: 'orange',
             transition: 'color 0.5s',
           },
         }}
       >
-    <h1 style={{          fontWeight: 'bold',}}>  GET LOAN IN 5 MINUTES </h1>
+    <h1 style={{fontWeight: 'bold',}}>  GET LOAN IN 5 MINUTES </h1>
         <br />
         <Typography
           sx={{
-            marginTop: '50px',
+            marginTop: '40px',
             color: 'black',
             fontSize: { xs: '1.5rem', sm: '4rem' },
-            mb: 2,
+            mb: 3,
             fontWeight: 'bold',
             textAlign: 'left',
             lineHeight: 1,
@@ -88,7 +88,7 @@ const FeaturesComponent = () => {
             color: 'black',
             fontWeight: 'bold',
             fontSize: { xs: '1rem', sm: '1.5rem' },
-            mb: { xs: 1, sm: 2 },
+            mb: { xs: 2, sm: 3 },
             textAlign: 'left',
             '&:hover': {
               color: 'black',

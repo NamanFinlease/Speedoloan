@@ -41,7 +41,7 @@ const AboutUs = () => {
                 <p>
                 Welcome to Speedoloan.com, your trusted provider of personal loans for salaried professionals in India. We offer quick financial support for unexpected expenses, from medical emergencies to home improvements.    </p>
                 <p>
-                As part of Naman Finlease Private Limited, an RBI-registered NBFC, we focus on delivering flexible and reliable loan solutions tailored to your needs.</p>
+                As part of an RBI-registered NBFC, we focus on delivering flexible and reliable loan solutions tailored to your needs.</p>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ const AboutUs = () => {
         <div className="vision-text-box">
           <h3>Our Vision for the Future</h3>
           <p>
-          At Speedoloan.com, part of Naman Finlease Private Limited, we strive to empower salaried professionals in India by expanding credit access. We’re committed to enhancing our platform with tools and personalized loan offers to meet your financial needs </p>
+          At Speedoloan.com, part of we strive to empower salaried professionals in India by expanding credit access. We’re committed to enhancing our platform with tools and personalized loan offers to meet your financial needs </p>
           
         </div>
       </section>

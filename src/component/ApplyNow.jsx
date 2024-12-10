@@ -69,7 +69,7 @@ const ApplyNow = () => {
 
   const sendOtp = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/verify/mobile/get-otp', {
+      const response = await axios.post('https://api.fintechbasket.com/api/verify/mobile/get-otp', {
         mobile: mobile,
         fName: formValues.fName,
         lName: formValues.lName,
@@ -104,7 +104,7 @@ const ApplyNow = () => {
             },
           }).then(({ value: otp }) => {
             if (otp.length === 6) {
-              verifyOtp(formValues.mobile, otp); // Pass OTP to the verification function
+              verifyOtp( otp); // Pass OTP to the verification function
             } else {
               Swal.fire({
                 icon: 'error',
@@ -116,7 +116,7 @@ const ApplyNow = () => {
         });
       } else {
         throw new Error(response.data.message || 'Failed to send OTP');
-      }
+      } 
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -126,29 +126,35 @@ const ApplyNow = () => {
     }
   };
   
-  const verifyOtp = async () => {
+  const verifyOtp = async (otp) => {
 
-    console.log(otp,mobile)
-    const newotp = "409000"
+    console.log()
+    
     try {
-      const response = await axios.post('http://localhost:3000/api/verify/mobile/verify-otp', {
+      const response = await axios.post('https://api.fintechbasket.com/api/verify/mobile/verify-otp', {
         mobile,
-        newotp
+        otp
       });
+
+      setIsMobileVerified(true)
+
+      console.log( response)
   
-      if (response.data.verified) {
+      if (response.data.success) {
         Swal.fire({
           icon: 'success',
           title: 'Verified',
           text: 'Your mobile number has been verified successfully!',
         });
+
+        return ;
       } else {
         throw new Error('Invalid OTP');
       }
     } catch (error) {
       Swal.fire({
-        icon: 'error',
-        title: 'Verification Failed',
+        icon: 'error',  
+        title: 'Verification Failed For Catch ',
         text: error.message || 'Invalid OTP. Please try again.',
       });
     }
@@ -244,7 +250,9 @@ const ApplyNow = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+    if( !isMobileVerified){
+      return alert("Verify Mobile First ")
+    }
     const errors = validateForm(); // Validate form and get errors
     
     console.log("the values of onject ",Object.keys(errors).length)
@@ -437,7 +445,7 @@ const ApplyNow = () => {
                     },
                   }}
                 />
-                {/* <Button
+                <Button
                   variant="contained"
                   onClick={() => sendOtp()}
                   disabled={loading || isOtpSent}
@@ -453,7 +461,7 @@ const ApplyNow = () => {
                   }}
                 >
                   {isOtpSent ? 'OTP Sent' : 'Get OTP'}
-                </Button> */}
+                </Button>
               </Box>
             </Grid>
             {isOtpSent && (

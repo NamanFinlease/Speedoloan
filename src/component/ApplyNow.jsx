@@ -31,10 +31,7 @@ const ApplyNow = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [state, setState] = useState('');
   const [city, setCity] = useState('')
-
-
-
-
+  const [isMobileVerified , setIsMobileVerified] = useState(false)
   const [formValues, setFormValues] = useState({
     fName: '',
     lName:' ',
@@ -52,10 +49,6 @@ const ApplyNow = () => {
   });
   const [formErrors, setFormErrors] = useState({});
   const [animationState, setAnimationState] = useState([]);
-
-
-
-
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
   const [isOtpSent, setIsOtpSent] = useState(false);
@@ -67,6 +60,12 @@ const ApplyNow = () => {
     setMobile(e.target.value);
     console.log(mobile)
   };
+
+  const handleOtpChange = (e)=>{
+    console.log("H")
+    console.log(e.target.value);
+    setOtp(e.target.value)  
+  }
 
   const sendOtp = async () => {
     try {
@@ -127,11 +126,14 @@ const ApplyNow = () => {
     }
   };
   
-  const verifyOtp = async (mobile, otp) => {
+  const verifyOtp = async () => {
+
+    console.log(otp,mobile)
+    const newotp = "409000"
     try {
       const response = await axios.post('http://localhost:3000/api/verify/mobile/verify-otp', {
         mobile,
-        otp,
+        newotp
       });
   
       if (response.data.verified) {
@@ -173,7 +175,7 @@ const ApplyNow = () => {
 
   const validateForm = () => {
     const errors = {};
-    const mobileValid = /^\d{10}$/.test(formValues.mobile);
+    const mobileValid = /^\d{10}$/.test(mobile);
     const panValid = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(formValues.pan);
     const aadhaarValid = /^\d{12}$/.test(formValues.aadhaar);
     const emailValid = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formValues.personalEmail);
@@ -237,7 +239,7 @@ const ApplyNow = () => {
     }
   };
 
-
+ 
 
 
   const handleSubmit = async (event) => {
@@ -261,6 +263,7 @@ const ApplyNow = () => {
         },
         body: JSON.stringify({
           ...formValues,
+          mobile: mobile,
           state: state,
           city: city,
           termsAccepted,
@@ -308,7 +311,7 @@ const ApplyNow = () => {
     }
   };
   
-  
+ 
 
 
 
@@ -434,7 +437,7 @@ const ApplyNow = () => {
                     },
                   }}
                 />
-                <Button
+                {/* <Button
                   variant="contained"
                   onClick={() => sendOtp()}
                   disabled={loading || isOtpSent}
@@ -450,18 +453,18 @@ const ApplyNow = () => {
                   }}
                 >
                   {isOtpSent ? 'OTP Sent' : 'Get OTP'}
-                </Button>
+                </Button> */}
               </Box>
             </Grid>
             {isOtpSent && (
               <Grid item xs={12} md={6}>
-                <Box display="flex" alignItems="center" gap={2}>
+                {/* <Box display="flex" alignItems="center" gap={2}>
                   <TextField
                     fullWidth
                     required
                     label="Enter OTP"
                     value={otp}
-                    onChange={(e) => setOtp(e.target.value)}
+                    onChange={handleOtpChange} 
                     sx={{
                       '& .MuiOutlinedInput-root': {
                         '& fieldset': {
@@ -490,7 +493,7 @@ const ApplyNow = () => {
                   >
                     {isVerified ? 'Verified' : 'Verify OTP'}
                   </Button>
-                </Box>
+                </Box> */}
               </Grid>
             )}
 

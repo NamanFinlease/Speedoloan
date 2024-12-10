@@ -85,6 +85,7 @@ const FeaturesComponent = () => {
         <Typography
           variant="h4"
           sx={{
+            mt:'20px',
             color: 'black',
             fontWeight: 'bold',
             fontSize: { xs: '1rem', sm: '1.5rem' },

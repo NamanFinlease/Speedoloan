@@ -23,18 +23,25 @@ import {
   LocationOn,
 } from '@mui/icons-material';
 import Swal from 'sweetalert2';
+import { body } from 'framer-motion/client';
+import axios from 'axios';
+
 
 const ApplyNow = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [state, setState] = useState('');
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState('')
+
+
+
+
   const [formValues, setFormValues] = useState({
     fName: '',
     lName:' ',
     gender: '',
     pan: '',
     aadhaar: '',
-    mobile: '',
+    // mobile: '',
     alternateMobile: '',
     dob: '',
     personalEmail: '',
@@ -47,12 +54,111 @@ const ApplyNow = () => {
   const [animationState, setAnimationState] = useState([]);
 
 
+
+
+  const [mobile, setMobile] = useState("");
+  const [otp, setOtp] = useState("");
+  const [isOtpSent, setIsOtpSent] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleMobileChange = (e) => {
+    console.log(e.target.value)
+    setMobile(e.target.value);
+    console.log(mobile)
+  };
+
+  const sendOtp = async () => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/verify/mobile/get-otp', {
+        mobile: mobile,
+        fName: formValues.fName,
+        lName: formValues.lName,
+      });
+  
+      if (response.data.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'OTP Sent',
+          text: `An OTP has been sent to ${formValues.mobile}.`,
+          confirmButtonText: 'Enter OTP',
+        }).then(() => {
+          // Show OTP input SweetAlert
+          Swal.fire({
+            title: 'Enter OTP',
+            html: `
+              <div>
+                <input id="otp1" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp2" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp3" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp4" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp5" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp6" class="swal2-input" maxlength="1" style="width: 40px;" />
+              </div>
+            `,
+            confirmButtonText: 'Verify OTP',
+            preConfirm: () => {
+              const otp = Array.from({ length: 6 }, (_, i) =>
+                document.getElementById(`otp${i + 1}`).value.trim()
+              ).join('');
+              return otp;
+            },
+          }).then(({ value: otp }) => {
+            if (otp.length === 6) {
+              verifyOtp(formValues.mobile, otp); // Pass OTP to the verification function
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Invalid OTP',
+                text: 'Please enter all 6 digits.',
+              });
+            }
+          });
+        });
+      } else {
+        throw new Error(response.data.message || 'Failed to send OTP');
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message || 'Failed to send OTP. Please try again later.',
+      });
+    }
+  };
+  
+  const verifyOtp = async (mobile, otp) => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/verify/mobile/verify-otp', {
+        mobile,
+        otp,
+      });
+  
+      if (response.data.verified) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Verified',
+          text: 'Your mobile number has been verified successfully!',
+        });
+      } else {
+        throw new Error('Invalid OTP');
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Verification Failed',
+        text: error.message || 'Invalid OTP. Please try again.',
+      });
+    }
+  };
+
   const handleCheckboxChange = (event) => {
     setTermsAccepted(event.target.checked);
   };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    console.log( name , value)
 
     // Validation for input fields
     if (name === 'mobile' && !/^\d*$/.test(value)) return;
@@ -62,6 +168,7 @@ const ApplyNow = () => {
 
     setFormValues({ ...formValues, [name]: value });
     setFormErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
+    console.log("the fname is ",fName)
   };
 
   const validateForm = () => {
@@ -207,227 +314,282 @@ const ApplyNow = () => {
 
   return (
     <div>
-      <Box sx={{ position: 'relative', mb: 4 }}>
-        <video
-          src={"https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Apply+now-LflBC-eW.mp4"}
-          autoPlay
-          loop
-          muted
-          style={{
-            width: '100%',
-            height: '40%',
-            objectFit: 'cover',
-          }}
-        />
-      </Box>
-          <form>
-          <Container maxWidth="xl" sx={{ mt: 4 }}>
-        <Box
-          component="form"
-          id="loanForm"
-          onSubmit={handleSubmit}
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 3,
-            padding: 4,
-            backgroundColor: 'rgba(240, 240, 240, 0.9)',
-            borderRadius: 20,
-            border: '2px solid gray',
-            boxShadow: 3,
-            width: '100%',
-          }}
-        >
-          <Typography variant="h6" gutterBottom>
-            Personal Information
-          </Typography>
-          <Grid container spacing={3}>
-                              {[
-                    { label: 'First Name', name: 'fName', icon: <Person /> },
-                    { label: 'Last Name', name: 'lName', icon: <Person /> },
-
-                    { label: 'Gender', name: 'gender', icon: <Person />, type: 'select', options: ['M', 'F', 'Others'] },
-                    { label: 'PAN', name: 'pan', icon: <Public /> },
-                    { label: 'Aadhaar', name: 'aadhaar', icon: <Public /> },
-                    { label: 'Mobile', name: 'mobile', icon: <Phone /> },
-                    { label: 'DOB', name: 'dob', icon: <CalendarToday />, type: 'date' },
-                    { label: 'Personal Email', name: 'personalEmail', icon: <Email /> },
-                    { label: 'Office Email', name: 'officeEmail', icon: <Email /> },
-                    { label: 'Monthly Salary', name: 'salary', icon: <CurrencyRupee /> },
-                    { label: 'Loan Amount Required', name: 'loanAmount', icon: <CurrencyRupee /> },
-                  ]
-                ?.map((field, index) => (
-              <Grid
-                key={index}
-                item
-                xs={12}
-                md={6}
-                
-              >
-                <TextField
-                  fullWidth
-                  required
-                  name={field.name}
-                  label={field.label}
-                  value={formValues[field.name]}
-                  onChange={handleInputChange}
-                  type={field.type || 'text'}
-                  select={field.type === 'select'}
-                  error={!!formErrors[field.name]}
-                  helperText={formErrors[field.name] || ''}
-                  InputProps={{
-                    startAdornment: <InputAdornment position="start">{field.icon}</InputAdornment>,
-                  }}
-                >
-                  {field.options &&
-                    field.options.map((option) => (
-                      <MenuItem key={option} value={option}>
- {option === "M" ? "Male" : option === "F" ? "Female" : "Others"}
- </MenuItem>
-                    ))}
-                </TextField>
-              </Grid>
-            ))}
-
-        <Grid
-          item
-          xs={12}
-          md={6}
-          sx={{
-           
-          }}
-        >
-          <TextField
-            fullWidth
-            required
-            name='pinCode'
-            label="Pincode"
-            value={formValues.pinCode}
-            onChange={handlePincodeChange}
-            error={!!formErrors.pinCode}
-            helperText={formErrors.pinCode || ''}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <PinDrop sx={{ color: '#1976d2' }} />
-                </InputAdornment>
-              ),
-            }}
-            sx={{
-              backgroundColor: '#f0f4ff',
-              borderRadius: '4px',
-            }}
-          />
-        </Grid>
-        <Grid
-              item
-              xs={12}
-              md={6}
-              sx={{
-              
-              }}
-            >
+  <Box sx={{ position: 'relative', mb: 4 }}>
+    <video
+      src={
+        'https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Apply+now-LflBC-eW.mp4'
+      }
+      autoPlay
+      loop
+      muted
+      style={{
+        width: '100%',
+        height: '40%',
+        objectFit: 'cover',
+      }}
+    />
+  </Box>
+  <form>
+    <Container maxWidth="xl" sx={{ mt: 4 }}>
+      <Box
+        component="form"
+        id="loanForm"
+        onSubmit={handleSubmit}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 3,
+          padding: 4,
+          backgroundColor: 'rgba(240, 240, 240, 0.9)',
+          borderRadius: 20,
+          border: '2px solid gray',
+          boxShadow: 3,
+          width: '100%',
+        }}
+      >
+        <Typography variant="h6" gutterBottom>
+          Personal Information
+        </Typography>
+        <Grid container spacing={3}>
+          {[
+            { label: 'First Name', name: 'fName', icon: <Person /> },
+            { label: 'Last Name', name: 'lName', icon: <Person /> },
+            {
+              label: 'Gender',
+              name: 'gender',
+              icon: <Person />,
+              type: 'select',
+              options: ['M', 'F', 'Others'],
+            },
+            { label: 'PAN', name: 'pan', icon: <Public /> },
+            { label: 'Aadhaar', name: 'aadhaar', icon: <Public /> },
+            // { label: 'Mobile', name: 'mobile', icon: <Phone /> },
+            { label: 'DOB', name: 'dob', icon: <CalendarToday />, type: 'date' },
+            { label: 'Personal Email', name: 'personalEmail', icon: <Email /> },
+            { label: 'Office Email', name: 'officeEmail', icon: <Email /> },
+            { label: 'Monthly Salary', name: 'salary', icon: <CurrencyRupee /> },
+            { label: 'Loan Amount Required', name: 'loanAmount', icon: <CurrencyRupee /> },
+          ]?.map((field, index) => (
+            <Grid item xs={12} md={6} key={index}>
               <TextField
                 fullWidth
                 required
-                name='city'
-                label="City"
-                value={city}
-                error={!!formErrors.city}
-                helperText={formErrors.city || ''}
+                name={field.name}
+                label={field.label}
+                value={formValues[field.name]}
+                onChange={handleInputChange}
+                type={field.type || 'text'}
+                select={field.type === 'select'}
+                error={!!formErrors[field.name]}
+                helperText={formErrors[field.name] || ''}
                 InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <LocationOn />
-                    </InputAdornment>
-                  ),
+                  startAdornment: <InputAdornment position="start">{field.icon}</InputAdornment>,
                 }}
               >
-            
-                  
+                {field.options &&
+                  field.options.map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {option === 'M' ? 'Male' : option === 'F' ? 'Female' : 'Others'}
+                    </MenuItem>
+                  ))}
               </TextField>
             </Grid>
+          ))}
 
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-            
-            }}
-          >
+          {/* Mobile OTP Section */}
+            <Grid item xs={12} md={6}>
+              <Box display="flex" alignItems="center" gap={2}>
+                <TextField
+                  fullWidth
+                  required
+                  label="Mobile Number"
+                  value={mobile}
+                  onChange={handleMobileChange}
+                  error={!!formErrors.mobile}
+                  helperText={formErrors.mobile || ''}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Phone />
+                      </InputAdornment>
+                    ),
+                  }}
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: 'lightgray', // Set border color to gray
+                      },
+                      '&:hover fieldset': {
+                        borderColor: 'darkgray', // Dark gray on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'gray', // Gray color when focused
+                      },
+                    },
+                    '& .MuiInputLabel-root': {
+                      color: 'gray', // Label color
+                    },
+                    '& .MuiInputLabel-root.Mui-focused': {
+                      color: 'darkgray', // Darker label color when focused
+                    },
+                  }}
+                />
+                <Button
+                  variant="contained"
+                  onClick={() => sendOtp()}
+                  disabled={loading || isOtpSent}
+                  sx={{
+                    backgroundColor: 'gray', // Custom gray background color
+                    color: '#fff', // White text color
+                    '&:hover': {
+                      backgroundColor: 'darkgray', // Darker gray on hover
+                    },
+                    '&.Mui-disabled': {
+                      backgroundColor: '#d3d3d3', // Lighter gray when disabled
+                    },
+                  }}
+                >
+                  {isOtpSent ? 'OTP Sent' : 'Get OTP'}
+                </Button>
+              </Box>
+            </Grid>
+            {isOtpSent && (
+              <Grid item xs={12} md={6}>
+                <Box display="flex" alignItems="center" gap={2}>
+                  <TextField
+                    fullWidth
+                    required
+                    label="Enter OTP"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                          borderColor: 'gray', // Set border color to gray
+                        },
+                        '&:hover fieldset': {
+                          borderColor: 'darkgray', // Dark gray on hover
+                        },
+                        '&.Mui-focused fieldset': {
+                          borderColor: 'gray', // Gray color when focused
+                        },
+                      },
+                      '& .MuiInputLabel-root': {
+                        color: 'gray', // Label color
+                      },
+                      '& .MuiInputLabel-root.Mui-focused': {
+                        color: 'gray', // Darker label color when focused
+                      },
+                    }}
+                  />
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={verifyOtp}
+                    disabled={loading || isVerified}
+                  >
+                    {isVerified ? 'Verified' : 'Verify OTP'}
+                  </Button>
+                </Box>
+              </Grid>
+            )}
+
+
+          {/* Pincode Section */}
+          <Grid item xs={12} md={6}>
             <TextField
               fullWidth
               required
-              name='state'
-              label="State"
-              value={state}
-              error={!!formErrors.state}
-              helperText={formErrors.state || ''}
+              label="Pincode"
+              name="pinCode"
+              value={formValues.pinCode}
+              onChange={handlePincodeChange}
+              error={!!formErrors.pinCode}
+              helperText={formErrors.pinCode || ''}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <LocationOn sx={{ color: '#1976d2' }} />
+                    <PinDrop />
                   </InputAdornment>
                 ),
               }}
-              sx={{
-                backgroundColor: '#f0f4ff',
-                borderRadius: '4px',
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <TextField
+              fullWidth
+              label="City"
+              value={city}
+              disabled
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LocationOn />
+                  </InputAdornment>
+                ),
               }}
-            >
-              
-            </TextField>
+            />
           </Grid>
-           
-
-
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox checked={termsAccepted} onChange={handleCheckboxChange} />}
-                label={
-                  <Typography variant="body2">
-                    I accept the{' '}
-                    <Link href="terms-condition" target="_blank" rel="noopener">
-                      Terms & Conditions
-                    </Link>{' '}
-                    and{' '}
-                    <Link href="privacy-policy" target="_blank" rel="noopener">
-                      Privacy Policy
-                    </Link>
-                  </Typography>
-                }
-              />
-              {formErrors.termsAccepted && (
-                <Typography color="error" variant="body2">
-                  {formErrors.termsAccepted}
-                </Typography>
-              )}
-            </Grid>
+          <Grid item xs={12} md={6}>
+            <TextField
+              fullWidth
+              label="State"
+              value={state}
+              disabled
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LocationOn />
+                  </InputAdornment>
+                ),
+              }}
+            />
           </Grid>
+        </Grid>
 
-          <Button
-                  variant="contained"
-                  type="submit"
-                  onClick={handleSubmit}
+        <Grid item xs={12}>
+          <FormControlLabel
+            control={<Checkbox checked={termsAccepted} onChange={handleCheckboxChange} />}
+            label={
+              <Typography variant="body2">
+                I accept the{' '}
+                <Link href="terms-condition" target="_blank" rel="noopener">
+                  Terms & Conditions
+                </Link>{' '}
+                and{' '}
+                <Link href="privacy-policy" target="_blank" rel="noopener">
+                  Privacy Policy
+                </Link>
+              </Typography>
+            }
+          />
+          {formErrors.termsAccepted && (
+            <Typography color="error" variant="body2">
+              {formErrors.termsAccepted}
+            </Typography>
+          )}
+        </Grid>
 
-                  sx={{
-                    mt: 2,
-                    bgcolor: 'orange', // Set the background color to orange
-                    color: '#fff',
-                    '&:hover': {
-                      bgcolor: 'darkgray', // Set the hover background color to dark gray
-                    },
-                  }}
-                > 
-                  Submit
-                </Button>
+        <Button
+          variant="contained"
+          type="submit"
+          onClick={handleSubmit}
+          sx={{
+            mt: 2,
+            bgcolor: 'orange', // Set the background color to orange
+            color: '#fff',
+            '&:hover': {
+              bgcolor: 'darkgray', // Set the hover background color to dark gray
+            },
+          }}
+        >
+          Submit
+        </Button>
+      </Box>
+    </Container>
+  </form>
+</div>
 
-        </Box>
-      </Container>
-          </form>
-      
-    </div>
   );
 };
 

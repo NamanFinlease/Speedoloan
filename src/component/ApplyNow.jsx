@@ -66,17 +66,62 @@ const ApplyNow = () => {
 
   const sendOtp = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.post(`${BASE_URL}/api/verify/mobile/get-otp`, {
+=======
+      const response = await axios.post('https://api.fintechbasket.com/api/verify/mobile/get-otp', {
+>>>>>>> ccf29c8f1bb81f34352def2b221864b1e108f2e2
         mobile: mobile,
         fName: formValues.fName,
         lName: formValues.lName,
       });
 
       if (response.data.success) {
+<<<<<<< HEAD
         setOpenModal(true)
+=======
+        Swal.fire({
+          icon: 'success',
+          title: 'OTP Sent',
+          text: `An OTP has been sent to ${formValues.mobile}.`,
+          confirmButtonText: 'Enter OTP',
+        }).then(() => {
+          // Show OTP input SweetAlert
+          Swal.fire({
+            title: 'Enter OTP',
+            html: `
+              <div>
+                <input id="otp1" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp2" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp3" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp4" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp5" class="swal2-input" maxlength="1" style="width: 40px;" />
+                <input id="otp6" class="swal2-input" maxlength="1" style="width: 40px;" />
+              </div>
+            `,
+            confirmButtonText: 'Verify OTP',
+            preConfirm: () => {
+              const otp = Array.from({ length: 6 }, (_, i) =>
+                document.getElementById(`otp${i + 1}`).value.trim()
+              ).join('');
+              return otp;
+            },
+          }).then(({ value: otp }) => {
+            if (otp.length === 6) {
+              verifyOtp( otp); // Pass OTP to the verification function
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Invalid OTP',
+                text: 'Please enter all 6 digits.',
+              });
+            }
+          });
+        });
+>>>>>>> ccf29c8f1bb81f34352def2b221864b1e108f2e2
       } else {
         throw new Error(response.data.message || 'Failed to send OTP');
-      }
+      } 
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -85,8 +130,45 @@ const ApplyNow = () => {
       });
     }
   };
+<<<<<<< HEAD
 
 
+=======
+  
+  const verifyOtp = async (otp) => {
+
+    console.log()
+    
+    try {
+      const response = await axios.post('https://api.fintechbasket.com/api/verify/mobile/verify-otp', {
+        mobile,
+        otp
+      });
+
+      setIsMobileVerified(true)
+
+      console.log( response)
+  
+      if (response.data.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Verified',
+          text: 'Your mobile number has been verified successfully!',
+        });
+
+        return ;
+      } else {
+        throw new Error('Invalid OTP');
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',  
+        title: 'Verification Failed For Catch ',
+        text: error.message || 'Invalid OTP. Please try again.',
+      });
+    }
+  };
+>>>>>>> ccf29c8f1bb81f34352def2b221864b1e108f2e2
 
   const handleCheckboxChange = (event) => {
     setTermsAccepted(event.target.checked);
@@ -174,7 +256,13 @@ const ApplyNow = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+<<<<<<< HEAD
 
+=======
+    if( !isMobileVerified){
+      return alert("Verify Mobile First ")
+    }
+>>>>>>> ccf29c8f1bb81f34352def2b221864b1e108f2e2
     const errors = validateForm(); // Validate form and get errors
 
     // Check for validation errors
@@ -329,7 +417,68 @@ const ApplyNow = () => {
                 </Grid>
               ))}
 
+<<<<<<< HEAD
               {/* Mobile OTP Section */}
+=======
+          {/* Mobile OTP Section */}
+            <Grid item xs={12} md={6}>
+              <Box display="flex" alignItems="center" gap={2}>
+                <TextField
+                  fullWidth
+                  required
+                  label="Mobile Number"
+                  value={mobile}
+                  onChange={handleMobileChange}
+                  error={!!formErrors.mobile}
+                  helperText={formErrors.mobile || ''}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Phone />
+                      </InputAdornment>
+                    ),
+                  }}
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: 'lightgray', // Set border color to gray
+                      },
+                      '&:hover fieldset': {
+                        borderColor: 'darkgray', // Dark gray on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'gray', // Gray color when focused
+                      },
+                    },
+                    '& .MuiInputLabel-root': {
+                      color: 'gray', // Label color
+                    },
+                    '& .MuiInputLabel-root.Mui-focused': {
+                      color: 'darkgray', // Darker label color when focused
+                    },
+                  }}
+                />
+                <Button
+                  variant="contained"
+                  onClick={() => sendOtp()}
+                  disabled={loading || isOtpSent}
+                  sx={{
+                    backgroundColor: 'gray', // Custom gray background color
+                    color: '#fff', // White text color
+                    '&:hover': {
+                      backgroundColor: 'darkgray', // Darker gray on hover
+                    },
+                    '&.Mui-disabled': {
+                      backgroundColor: '#d3d3d3', // Lighter gray when disabled
+                    },
+                  }}
+                >
+                  {isOtpSent ? 'OTP Sent' : 'Get OTP'}
+                </Button>
+              </Box>
+            </Grid>
+            {isOtpSent && (
+>>>>>>> ccf29c8f1bb81f34352def2b221864b1e108f2e2
               <Grid item xs={12} md={6}>
                 <Box display="flex" alignItems="center" gap={2}>
                   <TextField

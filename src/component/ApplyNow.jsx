@@ -61,14 +61,8 @@ const ApplyNow = () => {
   const [loading, setLoading] = useState(false);
 
   const handleMobileChange = (e) => {
-    console.log(e.target.value)
     setMobile(e.target.value);
-    console.log(mobile)
   };
-
-
-
-  console.log('formvalues',mobile)
 
   const sendOtp = async () => {
     try {
@@ -80,12 +74,6 @@ const ApplyNow = () => {
 
       if (response.data.success) {
         setOpenModal(true)
-        // Swal.fire({
-        //   icon: 'success',
-        //   title: 'OTP Sent',
-        //   text: `An OTP has been sent to ${formValues.mobile}.`,
-        //   confirmButtonText: 'Enter OTP',
-        // })
       } else {
         throw new Error(response.data.message || 'Failed to send OTP');
       }
@@ -98,33 +86,7 @@ const ApplyNow = () => {
     }
   };
 
-  const verifyOtp = async () => {
 
-    console.log(otp, mobile)
-    const newotp = "409000"
-    try {
-      const response = await axios.post('http://localhost:3000/api/verify/mobile/verify-otp', {
-        mobile,
-        newotp
-      });
-
-      if (response.data.verified) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Verified',
-          text: 'Your mobile number has been verified successfully!',
-        });
-      } else {
-        throw new Error('Invalid OTP');
-      }
-    } catch (error) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Verification Failed',
-        text: error.message || 'Invalid OTP. Please try again.',
-      });
-    }
-  };
 
   const handleCheckboxChange = (event) => {
     setTermsAccepted(event.target.checked);
@@ -132,7 +94,6 @@ const ApplyNow = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    console.log(name, value)
 
     // Validation for input fields
     if (name === 'mobile' && !/^\d*$/.test(value)) return;
@@ -142,7 +103,6 @@ const ApplyNow = () => {
 
     setFormValues({ ...formValues, [name]: value });
     setFormErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
-    console.log("the fname is ", fName)
   };
 
   const validateForm = () => {
@@ -178,7 +138,6 @@ const ApplyNow = () => {
   const handlePincodeChange = async (e) => {
     const value = e.target.value;
     setFormValues({ ...formValues, pinCode: value });
-    console.log(value);
 
     // Fetch city and state based on pincode
     if (value.length === 6) {
@@ -190,7 +149,6 @@ const ApplyNow = () => {
           const { Block, State } = data[0].PostOffice[0];
           setCity(Block);
           setState(State);
-          console.log(city, state);
 
         } else {
           // Handle invalid pin code case
@@ -219,7 +177,6 @@ const ApplyNow = () => {
 
     const errors = validateForm(); // Validate form and get errors
 
-    console.log("the values of onject ", Object.keys(errors).length)
     // Check for validation errors
     if (Object.keys(errors).length >= 2) {
       setFormErrors(errors); // Set the errors in state
@@ -228,7 +185,7 @@ const ApplyNow = () => {
 
     // Proceed with form submission if there are no errors
     try {
-      const response = await fetch('https://api.fintechbasket.com/api/leads/', {
+      const response = await fetch(`${BASE_URL}/api/leads/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -289,7 +246,7 @@ const ApplyNow = () => {
 
   return (
     <>
-    { <MobileOtpModal open={openModal} mobile={mobile} setIsMobileVerified={setIsMobileVerified} onClose={() => setOpenModal()} />}
+    {openModal && <MobileOtpModal open={openModal} mobile={mobile} setIsMobileVerified={setIsMobileVerified} onClose={() => setOpenModal()} />}
       <Box sx={{ position: 'relative', mb: 4 }}>
         <video
           src={
@@ -380,6 +337,7 @@ const ApplyNow = () => {
                     required
                     label="Mobile Number"
                     value={mobile}
+                    disabled={isMobileVerified}
                     onChange={handleMobileChange}
                     error={!!formErrors.mobile}
                     helperText={formErrors.mobile || ''}
@@ -528,6 +486,9 @@ const ApplyNow = () => {
                 />
               </Grid>
             </Grid>
+            {(termsAccepted  && !isMobileVerified) && <Typography variant="body1" color="#ed0e33" align="left">
+            Verify mobile first
+          </Typography>}
 
             <Grid item xs={12}>
               <FormControlLabel

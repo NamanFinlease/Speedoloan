@@ -11,9 +11,8 @@ const MobileOtpModal = ({ open,mobile, onClose,setIsMobileVerified }) => {
   const { id } = useParams();
   const [otp, setOtp] = useState(Array(6).fill(''));
   const [timeLeft, setTimeLeft] = useState(30); // 30 seconds countdown for resend
+  const [resendMSGTime, setResendMSGTime] = useState(0); 
   const inputRefs = useRef([]);
-
-  
 
   // Handle OTP input
   const handleChange = (e, index) => {
@@ -41,9 +40,29 @@ const MobileOtpModal = ({ open,mobile, onClose,setIsMobileVerified }) => {
     }
   };
 
-  const handleResend = () => {
-    // aadhaarOtp(lead._id)
+  const handleResend = async() => {
+    try {
+      const response = await axios.post(`${BASE_URL}/api/verify/mobile/get-otp`, {
+        mobile: mobile,
+        fName: "",
+        lName:"" ,
+      });
+
+      if (response.data.success) {
+        setTimeLeft(30)
+        setResendMSGTime(30)
+      } else {
+        throw new Error(response.data.message || 'Failed to send OTP');
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.message || 'Failed to send OTP. Please try again later.',
+      });
+    }
   };
+
 
   // Countdown logic for Resend OTP
   useEffect(() => {
@@ -51,7 +70,16 @@ const MobileOtpModal = ({ open,mobile, onClose,setIsMobileVerified }) => {
       const timerId = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
       return () => clearTimeout(timerId);
     }
+   
   }, [timeLeft]);
+  useEffect(() => {
+    
+    if (resendMSGTime > 0) {
+      const timer = setTimeout(() => setResendMSGTime(resendMSGTime - 1), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [resendMSGTime]);
+
 
   // Handle form submit
   const handleSubmit =async () => {
@@ -62,7 +90,6 @@ const MobileOtpModal = ({ open,mobile, onClose,setIsMobileVerified }) => {
           otp:data,
           mobile
         });
-        console.log('response',response)
   
         if (response.data.success) {
           onClose()
@@ -86,12 +113,12 @@ const MobileOtpModal = ({ open,mobile, onClose,setIsMobileVerified }) => {
 
 
   return (
-    <Dialog open={open} onClose={onClose}>
+    <Dialog open={open} >
       <DialogTitle sx={{ textAlign: 'center', fontWeight: 'bold' }}>OTP Verification</DialogTitle>
       <DialogContent>
         <Box display="flex" flexDirection="column" alignItems="center" gap={3}>
           <Typography variant="body1" align="center" color="#000000">
-            Enter the 6-digit OTP sent to your Aadhaar-linked email.
+            Enter the 6-digit OTP sent to your mobile number.
           </Typography>
 
           {/* OTP Input Fields */}
@@ -135,6 +162,9 @@ const MobileOtpModal = ({ open,mobile, onClose,setIsMobileVerified }) => {
             ))}
           </Box>
 
+          <Typography variant="body2" color="#19b338" align="center">
+            {resendMSGTime > 0 && `OTP  sent successfully.`}
+          </Typography>
           <Typography variant="body2" color="#000000" align="center">
             {timeLeft > 0
               ? `Resend OTP in ${timeLeft}s`
@@ -147,7 +177,7 @@ const MobileOtpModal = ({ open,mobile, onClose,setIsMobileVerified }) => {
         <Button onClick={handleSubmit} variant="contained" color="primary" sx={{ fontWeight: 'bold' }}>
           Submit
         </Button>
-        <Button onClick={onClose} sx={{ fontWeight: 'bold' }}>Close</Button>
+        {/* <Button onClick={onClose} sx={{ fontWeight: 'bold' }}>Close</Button> */}
       </DialogActions>
     </Dialog>
   );

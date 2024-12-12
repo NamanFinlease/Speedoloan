@@ -201,7 +201,6 @@ const ApplyNow = () => {
                 },
                 body: JSON.stringify({
                     ...formValues,
-                    mobile: mobile,
                     state: state,
                     city: city,
                     termsAccepted,

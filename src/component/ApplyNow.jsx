@@ -42,7 +42,7 @@ const ApplyNow = () => {
     gender: '',
     pan: '',
     aadhaar: '',
-    mobile: '',
+    // mobile: '',
     alternateMobile: '',
     dob: '',
     personalEmail: '',

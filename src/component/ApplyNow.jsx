@@ -181,7 +181,7 @@ const ApplyNow = () => {
 
   const validateForm = () => {
     const errors = {};
-    const mobileValid = /^\d{10}$/.test(formValues.mobile);
+    // const mobileValid = /^\d{10}$/.test(formValues.mobile);
     const panValid = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(formValues.pan);
     const aadhaarValid = /^\d{12}$/.test(formValues.aadhaar);
     const emailValid = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formValues.personalEmail);
@@ -194,7 +194,7 @@ const ApplyNow = () => {
       }
     });
 
-    if (!mobileValid) errors.mobile = 'Mobile number must be a 10-digit number';
+    // if (!mobileValid) errors.mobile = 'Mobile number must be a 10-digit number';
     if (!aadhaarValid) errors.aadhaar = 'Aadhaar number must be a 12-digit number';
     if (!panValid) errors.pan = 'Invalid PAN format (e.g., ABCDE1234F)';
     if (!emailValid) errors.personalEmail = 'Invalid email format';

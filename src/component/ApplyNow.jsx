@@ -105,10 +105,10 @@ const ApplyNow = () => {
     // Validation for input fields (only block if invalid input is entered)
   
     // Mobile: Only digits and max 10 characters
-    if (name === 'mobile') {
-      // Allow only numbers and prevent input longer than 10 characters
-      if (!/^\d*$/.test(value) || value.length > 10) return;
-    }
+    // if (name === 'mobile') {
+    //   // Allow only numbers and prevent input longer than 10 characters
+    //   if (!/^\d*$/.test(value) || value.length > 10) return;
+    // }
   
     // Other input validations (for fName, lName, salary, etc.)
     if (name === 'fName' && !/^[A-Za-z\s]*$/.test(value)) return;

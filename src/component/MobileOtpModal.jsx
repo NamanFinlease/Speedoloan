@@ -17,21 +17,28 @@ const MobileOtpModal = ({ open,mobile, onClose,setIsMobileVerified }) => {
   // Handle OTP input
   const handleChange = (e, index) => {
     const { value } = e.target;
-    if (value.match(/^[0-9]$/)) {
+  
+    // Validate only numeric input and check for length
+    if (/^[0-9]$/.test(value) && otp.join('').length < 10) {
       const newOtp = [...otp];
       newOtp[index] = value;
       setOtp(newOtp);
-
-      // Move to next input box
+  
+      // Move to next input box if there's room
       if (index < 5) {
         inputRefs.current[index + 1].focus();
       }
     } else if (value === '') {
+      // Allow clearing the field
       const newOtp = [...otp];
       newOtp[index] = '';
       setOtp(newOtp);
+    } else {
+      // Reject any other input (alphabet or special characters)
+      e.preventDefault();
     }
   };
+  
 
   // Handle key press for deleting or backspace
   const handleKeyDown = (e, index) => {

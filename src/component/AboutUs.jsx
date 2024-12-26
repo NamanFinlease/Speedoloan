@@ -37,11 +37,11 @@ const AboutUs = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="about-one__content">
-                <h3>Welcome to Speedoloan.com</h3>
+                <h3>Welcome to Speedo Loan</h3>
                 <p>
-                Welcome to Speedoloan.com, your trusted provider of personal loans for salaried professionals in India. We offer quick financial support for unexpected expenses, from medical emergencies to home improvements.    </p>
+                Speedo Loan, your trusted provider of personal loans for salaried professionals in India, offers financial support for unexpected expenses, medical emergencies, home improvements - all in just a finger tap!                 </p>
                 <p>
-                As part of an RBI-registered NBFC, we focus on delivering flexible and reliable loan solutions tailored to your needs.</p>
+                As part of an RBI-registered NBFC, we focus on delivering flexible and reliable loan solutions customized as per your needs.                </p>
               </div>
             </div>
           </div>
@@ -53,9 +53,9 @@ const AboutUs = () => {
       <section className="vision-section">
         <img src={visionImage} alt="Our Vision" />
         <div className="vision-text-box">
-          <h3>Our Vision for the Future</h3>
+          <h3>Our Vision</h3>
           <p>
-          At Speedoloan.com, part of we strive to empower salaried professionals in India by expanding credit access. We’re committed to enhancing our platform with tools and personalized loan offers to meet your financial needs </p>
+          At Speedo Loan, we strive to empower salaried professionals in India by expanding credit access. We’re committed to enhancing our platform with tools and personalized loan offers to meet your financial needs          </p>
           
         </div>
       </section>
@@ -66,29 +66,29 @@ const AboutUs = () => {
         <div className="mission-text-box">
           <h3>Our Mission</h3>
           <p>
-          At Speedoloan.com, we aim to provide fast and reliable personal loans to salaried individuals with minimal paperwork, ensuring a seamless digital experience that empowers you to manage your finances confidently.  </p>
+          At Speedo Loan, we aim to provide fast and reliable personal loans to salaried individuals with minimal paperwork, ensuring a seamless digital experience that empowers you to manage your finances confidently.  </p>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
       <section className="why-choose-us">
         <div className="container">
-          <h3>Why Choose Speedoloan.com?</h3>
+          <h3>Why Choose Speedo Loan for their Services?</h3>
           <div className="why-choose-us__items">
             <div className="choose-us__item">
               <h4>Trusted by Thousands</h4>
               <p>
-              Speedoloan.com is a trusted personal lending partner for thousands of salaried individuals in India, known for our fast, fair, and reliable service.   </p>
+              Speedo Loan is a trusted digital lending partner for thousands of salaried individuals in India, known for the fast, fair, and reliable service.              </p>
             </div>
             <div className="choose-us__item">
               <h4>Security and Privacy</h4>
               <p>
-              At Speedoloan.com, your data security is our priority. We use advanced encryption and security measures to protect your information, fully complying with India’s data privacy laws </p>
+              At Speedo Loan, your data security is our priority. We use advanced encryption and security measures to protect your information, fully complying with India’s data privacy laws.              </p>
             </div>
             <div className="choose-us__item">
               <h4>Customer-Centric Approach</h4>
               <p>
-              At Speedoloan.com, we prioritize our customers with dedicated support for applications, repayments, and financial advice, ensuring exceptional service at every step. </p>
+              At Speedo Loan, we prioritize our customers with dedicated support for applications, repayments, and financial advice, ensuring exceptional service at every step. </p>
             </div>
             <div className="choose-us__item">
               <h4>Flexible and Inclusive</h4>
@@ -120,13 +120,13 @@ const AboutUs = () => {
       }}
     />
     <Typography variant="h4" gutterBottom>
-      Join the Speedoloan Family Today
+      Join the Speedo Loan Family Today
     </Typography>
     <Typography variant="body1" paragraph>
-      Experience convenient personal lending with Speedoloan.com. Whether you need a quick loan for unexpected expenses or a long-term solution, we’re here to help.
+      Experience convenient personal lending with Speedo Loan. Whether you need a quick loan for unexpected expenses or a long-term solution, we’re here to help.
     </Typography>
     <Typography variant="body1" paragraph>
-      Apply today and take control of your financial future with Speedoloan.com.
+      Apply today and take control of your financial future with Speedo Loan.
     </Typography>
   </div>
 </section>
@@ -146,7 +146,7 @@ const AboutUs = () => {
             align="center"
             sx={{ color: 'black', mb: 2 }} // Adding margin-bottom of 2 (8px)
           >
-            At Speedoloan.com, we have simplified the loan process to make it as easy and straightforward as possible. Here’s how it works:
+            At Speedo Loan, we have simplified the loan process to make it as easy and straightforward as possible. Here’s how it works:
           </Typography>
 
        {/* Process Steps */}
@@ -177,7 +177,7 @@ const AboutUs = () => {
               Instant Verification
             </Typography>
             <Typography variant="body2" align="center">
-              Our advanced technology allows us to verify your documents and creditworthiness quickly. Within minutes, you will receive a preliminary decision on your loan application.
+              Our advanced technology allows us to verify your documents and creditworthiness immediately. Within minutes, you will receive a preliminary decision on your loan application.
             </Typography>
           </Paper>
         </Grid>
@@ -191,8 +191,7 @@ const AboutUs = () => {
               Approval and Disbursal
             </Typography>
             <Typography variant="body2" align="center">
-              Once your loan is approved, the funds will be transferred directly to your bank account. In most cases, this happens within 24 to 48 hours of approval, so you can access the money when you need it most.
-            </Typography>
+            Once your loan is approved, the funds will be transferred directly to your bank account. In most cases, this happens within 24-48 hours of approval, but with us, you can get it in mere 5 minutes.            </Typography>
           </Paper>
         </Grid>
 
@@ -228,8 +227,8 @@ const AboutUs = () => {
               Enquire for Loan
             </Typography>
             <Typography variant="body1" sx={{ fontSize: { xs: '0.9rem', sm: '1rem' } }}>
-              We're here to help! Contact us with any questions or concerns about our services. Your feedback is important to us.
-            </Typography>
+            We're here to help you out! Contact us for any queries or concerns about our services. Your feedback is important to us.
+                        </Typography>
             <Link to="/contact-us" style={{ textDecoration: 'none' }}>
               <Button
                 variant="contained"

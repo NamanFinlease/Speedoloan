@@ -63,13 +63,13 @@ const ContactUs = () => {
         }}
       >
         <Typography variant="h3" sx={{ color: 'black', fontWeight: 'bold', '&:hover': { color: 'orange' } }}>
-          Ask for your query
-        </Typography>
+        Reach Out to Us
+                </Typography>
         <Grid container spacing={3} justifyContent="center" mt={3}>
           <Grid item xs={12} sm={4}>
             <Box className="hover-box" sx={{ padding: '30px', transition: '0.3s', borderRadius: '10px', textAlign: 'center' }}>
               <i className="fas fa-envelope"></i>
-              <Typography>Email: info@Speedoloan.com</Typography>
+              <Typography>Email: info@speedoloan.com</Typography>
             </Box>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -91,7 +91,7 @@ const ContactUs = () => {
           }}
         >
           <Box component="i" className="fas fa-map-marker-alt" sx={{ fontSize: '24px', marginRight: '10px' }} />
-          <Typography style={{marginTop:"20px"}}>Address: S-370, Panchsheel Park, New Delhi 110017, India</Typography>
+          <Typography style={{marginTop:"20px"}}>Address: S-370, Panchsheel Park, Delhi-110017, India</Typography>
         </Box>
       </Grid>
 

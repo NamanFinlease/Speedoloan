@@ -37,7 +37,7 @@ const Footer = () => {
             <ul style={{ listStyleType: 'none', padding: 0, margin: 0 }}>
               <li>
                 <Link href="contact-us" color="inherit" style={{ display: 'flex', alignItems: 'center' }}>
-                  <Email style={{ marginRight: '5px' }} /> Email: info@Speedoloan.com
+                  <Email style={{ marginRight: '5px' }} /> Email: info@speedoloan.com
                 </Link>
               </li>
               <li>
@@ -47,7 +47,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="contact-us" color="inherit" style={{ display: 'flex', alignItems: 'center' }}>
-                  <LocationOn style={{ marginRight: '5px',marginTop:'-20px' }} /> Address: S-370, Panchsheel Park, New Delhi 110017, India
+                  <LocationOn style={{ marginRight: '5px',marginTop:'-20px' }} /> Address: S-370, Panchsheel Park,Delhi-110017, India
                 </Link>
               </li>
             </ul>
@@ -67,7 +67,7 @@ const Footer = () => {
           {/* Links Section 2 */}
           <Grid item xs={12} md={3}>
             <ul style={{ listStyleType: 'none', padding: 0, margin: '20px' }}>
-              <li><Link href="terms-condition" color="inherit" sx={linkStyle}><i className="fa fa-angle-right" /> Terms & Condition</Link></li>
+              <li><Link href="terms-condition" color="inherit" sx={linkStyle}><i className="fa fa-angle-right" /> Terms & Conditions</Link></li>
               <li><Link href="privacy-policy" color="inherit" sx={linkStyle}><i className="fa fa-angle-right" /> Privacy Policy</Link></li>
               <li><Link href="faq" color="inherit" sx={linkStyle}><i className="fa fa-angle-right" /> FAQs</Link></li>
             </ul>
@@ -101,7 +101,7 @@ const Footer = () => {
         boxShadow: '0 -3px 10px rgba(0, 0, 0, 0.3)' 
       }}>
         <Typography variant="body2" style={{ color: '#fff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)' }}>
-          Copyright &copy; 2024 SpeedoLoan. All Rights Reserved.
+          Copyright &copy; 2024 Speedo Loan. All Rights Reserved.
         </Typography>
       </Box>
     </footer>

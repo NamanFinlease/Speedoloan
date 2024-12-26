@@ -11,12 +11,12 @@ const loanSteps = [
   {
     icon: <HowToRegIcon fontSize="large" sx={{ color: 'orange' }} />,
     title: "Apply Online",
-    description: "Click on Apply Now, Fill out our quick and easy online application."
+    description: "Click on Apply Now, fill out our quick and easy online application."
   },
   {
     icon: <VerifiedUserIcon fontSize="large" sx={{ color: 'orange' }} />,
     title: "Paperless Verification",
-    description: "We do paperless verification even for first-time users."
+    description: "We do paperless verification even for our first-time users."
   },
   {
     icon: <AccountBalanceIcon fontSize="large" sx={{ color: 'orange' }} />,
@@ -94,8 +94,8 @@ const LoanProcessDiagram = () => {
       }}
     >
       <Typography variant="h4" sx={{ color: 'black', mb: 5, "&:hover": { color: "orange" } }}>
-        <h2 style={{ fontSize: { xs: "32px", sm: "48px" } }}>Good Credit, Bad Credit! We don't discriminate</h2>
-        <h4>At Speedo Loan, we want to help you get your funds in emergency or to re-build your credit score.</h4>
+        <h2 style={{ fontSize: { xs: "32px", sm: "48px" } }}>Good credit, Bad credit - We don't discriminate!</h2>
+        <h4>At Speedo Loan, we want to help you get your funds in emergency situations or to re-build your credit score.</h4>
       </Typography>
 
       <Grid container spacing={8} justifyContent="center" alignItems="flex-start" sx={{ position: 'relative' }}>

@@ -99,7 +99,7 @@ const FeaturesComponent = () => {
         >
           Tired of lenders collecting your information only to deny your applications?
           <br />
-          At Speedoloan, We're proud to offer a solution that's notably better, <br />
+          At Speedo Loan, we're proud to offer a solution that's notably better, <br />
           designed to exceed your expectations.
         </Typography>
       </Typography>
@@ -135,8 +135,7 @@ const FeaturesComponent = () => {
               Lightning-Fast Approval
             </Typography>
             <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-              Complete our quick online application in just <strong style={{ color: 'black' }}> 5 minutes</strong>, with approvals granted swiftly.
-            </Typography>
+            Complete our online application in just<strong style={{ color: 'black' }}> 5 minutes</strong>, with quick approvals granted.            </Typography>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -206,8 +205,7 @@ const FeaturesComponent = () => {
               Expert Customer Support
             </Typography>
             <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-              Our friendly team is always available to assist you with any questions or concerns throughout the process.
-            </Typography>
+            Our customer support team is available from 10:30 AM to 6:30 PM IST to assist you with any questions or concerns all throughout the process.            </Typography>
           </Paper>
         </Grid>
       </Grid>

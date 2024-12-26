@@ -140,20 +140,20 @@ const SortFAQ = () => {
 // FAQ items data
 const faqItems = [
     {
-        question: 'What is Speedoloan.com?',
+        question: 'What is Speedo Loan?',
         answer: 'Speedoloan.com is a digital platform that provides fast and easy personal loans to salaried professionals in India.',
     },
     {
-        question: 'Who can apply for a personal loan on Speedoloan.com?',
+        question: 'Who can apply for a personal loan on Speedo Loan?',
         answer: 'Any salaried individual aged 21 to 60, employed full-time, can apply for a personal loan on Speedoloan.com.',
     },
     {
-        question: 'How much loan amount can I get from Speedoloan.com?',
+        question: 'How much loan amount can I get from Speedo Loan?',
         answer: 'We offer personal loans ranging from ₹5,000 to ₹1,00,000, depending on your salary and credit history.',
     },
     {
-        question: 'How do I apply for a loan on Speedoloan.com?',
-        answer: 'Applying for a loan on Speedoloan.com is easy. Fill out the form, submit the required documents, and receive instant approval.',
+        question: 'How do I apply for a loan on Speedo Loan?',
+        answer: 'Applying for a loan on Speedoloan.com is easy. Just fill out the form, submit the required documents, and receive instant approval from our end.',
     },
     {
         question: 'What documents do I need to apply for a loan?',

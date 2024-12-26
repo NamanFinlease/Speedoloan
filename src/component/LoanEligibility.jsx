@@ -46,8 +46,7 @@ const LoanEligibility = () => {
               3. Those who have exhausted all other resources.
             </Typography>
             <Typography variant="body1" sx={{ mt: 2, color: 'gray' }}>
-              Don't lose hope—reach out to us and apply now! We specialize in offering quick, hassle-free loans when traditional lenders turn you away. Let us help you get back on track.
-            </Typography>
+            Don't lose hope if you could not get loans approved till now! Reach out to us, apply now and get it transferred instantly. We specialize in offering quick, hassle-free loans when traditional lenders turn you away. Let us help you get back on track.            </Typography>
           </Box>
         </Grid>
       </Grid>

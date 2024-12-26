@@ -59,12 +59,11 @@ const WhyChoose = () => {
                 }}
             >
                 <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: 'black' }}>
-                    Why waste hours waiting? Get your loan in just minutes
-                </Typography>
+                Why waste your time waiting when you can get your loan in just 5 minutes?
+                 </Typography>
                 
                 <Typography variant="body1" paragraph sx={{ textAlign: 'justify' }}>
-                    With Speedo Loan, you don’t have to wait for days for financial assistance. Skip the hassle and get a fast loan processing experience that puts cash in your bank quickly. Our streamlined application process allows you to secure funds in as little as 5 minutes with our Fast Process.
-                </Typography>
+                With the Speedo Loan’s quickest services, you don’t have to wait for days for financial assistance. Skip the hassle and get a fast-loan-processing experience that puts cash in your bank quickly. Our streamlined application process allows you to secure funds in as little as 5 minutes.                </Typography>
 
                 {/* "Let's Get Started" Button */}
                 <Button

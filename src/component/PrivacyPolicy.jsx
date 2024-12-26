@@ -8,20 +8,20 @@ const PrivacyPolicy = () => {
         {
             title: "1. Information We Collect",
             content: [
-                "When you interact with Speedoloan, we may collect the following types of information:",
-                "• Personal Identification Information: Name, email address, phone number, physical address, date of birth, PAN, Aadhar details, etc.",
-                "• Financial Information: Bank account details, income statements, GST Number, credit history when applying for a loan, statement of bank account, etc.",
+                "When you interact with Speedo Loan, we may collect the following types of information:",
+                "• Personal Identification Information: Name, email address, phone number, physical address, date of birth, PAN, Aadhaar details, etc.",
+                "• Financial Information: Bank account details, income statements, GST Number, past credit history, statements of bank account, etc."
             ]
         },
         {
             title: "2. How We Use Your Information",
             content: [
-                "We use the information we collect to:",
+                "We use your collected information to:",
                 "• Process loan applications and verify your identity.",
                 "• Improve our services and website functionality.",
                 "• Communicate important updates regarding your loan, account status, and relevant services.",
                 "• Conduct internal audits and comply with legal and regulatory obligations.",
-                "• Personalize your experience and offer customized loan solutions.",
+                "• Personalize your experience and offer customized loan solutions."
             ]
         },
         {
@@ -29,19 +29,19 @@ const PrivacyPolicy = () => {
             content: [
                 "We do not sell or rent your personal information to third parties. However, we may share your data under the following circumstances:",
                 "• With trusted third-party service providers who help us in delivering our services (e.g., payment processors, verification agencies).",
-                "• To comply with legal obligations, regulatory requests, or to protect the rights and safety of Speedoloan and its users.",
+                "• To comply with legal obligations, regulatory requests, or to protect the rights and safety of Speedo Loan and its users."
             ]
         },
         {
             title: "4. Data Security",
             content: [
-                "Speedoloan takes appropriate measures to protect your personal and financial data. We use industry-standard encryption methods and secure servers to prevent unauthorized access, data breaches, or misuse of information.",
+                "Speedo Loan takes appropriate measures to protect your personal and financial data. We use industry-standard encryption methods and secure servers to prevent unauthorized access, data breaches, or misuse of information."
             ]
         },
         {
             title: "5. Cookies",
             content: [
-                "Our website may use cookies to improve the user experience. Cookies are small text files stored on your device that help us understand how you use our website. You can choose to accept or decline cookies in your browser settings. However, declining cookies may affect your ability to use certain features on the site.",
+                "Our website may use cookies to improve the user experience. Cookies are small text files stored on your device that help us understand how you use our website. You can choose to accept or decline cookies in your browser settings. However, declining cookies may affect your ability to use certain features on the site."
             ]
         },
         {
@@ -50,33 +50,33 @@ const PrivacyPolicy = () => {
                 "You have the right to:",
                 "• Access the personal information we hold about you.",
                 "• Request corrections to any inaccurate or incomplete information.",
-                "• Opt out of marketing communications at any time.",
-                "• Request deletion of your personal data, subject to legal obligations.",
+                "• Opt out of marketing communications at any given time.",
+                "• Request deletion of your personal data, subject to legal obligations."
             ]
         },
         {
             title: "7. Third-Party Links",
             content: [
-                "Speedoloan may contain links to third-party websites. We are not responsible for the privacy practices of these external sites and encourage you to review their respective privacy policies.",
+                "Speedo Loan may contain links to third-party websites. We are not responsible for the privacy practices of these external sites and encourage you to review their respective privacy policies."
             ]
         },
         {
             title: "8. Changes to This Privacy Policy",
             content: [
-                "We reserve the right to update or modify this Privacy Policy at any time. Any changes will be posted on this page with an updated effective date. We encourage you to review this policy periodically.",
+                "We reserve the right to update or modify this Privacy Policy at any time. Any changes will be posted on this page with an updated effective date. We encourage you to review this policy periodically."
             ]
         },
         {
             title: "9. Contact Us",
             content: [
                 "If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:",
-                "Email: infospeedoloan.com",
+                "Email: info@speedoloan.com",
                 "Phone: +91 90999 09941",
-                "Address: S-370, Panchsheel Park, New Delhi 110017, India",
+                "Address: S-370, Panchsheel Park, Delhi-110017, India"
             ]
-           
-        },
+        }
     ];
+    
 
     const [isVisible, setIsVisible] = useState(false);
     const policyRef = useRef(null);

@@ -54,7 +54,7 @@ const RepayLoan = () => {
       </Box>
 
       {/* Main Content */}
-      <Container> <Typography variant="h4" align="center" gutterBottom>
+      <Container> <Typography variant="h4" align="center" gutterBottom sx={{paddingTop:5}}>
       Please repay your loan and interest amount through ICICI Bank :
     </Typography>
   <Box className="inner-page-line" mt={10}>
@@ -64,7 +64,7 @@ const RepayLoan = () => {
       {/* QR Code and Bank Details Form Section */}
       <Grid container spacing={6}> {/* Increased spacing between QR and form */}
         {/* QR Code Section */}
-        <Grid item xs={12} sm={6} md={4} textAlign="center" sx={{  justifyContent: 'center' }}>
+        <Grid item xs={12} sm={6} md={4} textAlign="center" sx={{marginLeft:{xs:6,md:15},  justifyContent: 'center' }}>
           <Box>
             <Typography variant="h6" gutterBottom>
               Scan the QR Code for Faster Payment:
@@ -78,7 +78,8 @@ const RepayLoan = () => {
           <Box
             component="form"
             sx={{  
-              ml:18,
+              ml:{xs:6,md:12},
+              mt:2,
               border: '2px solid #136654',
               padding: '20px',
               borderRadius: '8px',

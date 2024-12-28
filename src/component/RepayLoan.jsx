@@ -91,56 +91,118 @@ const RepayLoan = () => {
               <h3 style={{ marginLeft: '10px' }}>Naman Finlease Private Limited</h3>
             </Typography>
 
-            <TextField
-              fullWidth
-              margin="normal"
-              label="Bank A/c No."
-              variant="outlined"
-              defaultValue="084305001370"
-              InputProps={{
-                readOnly: true, // Making the input read-only
-              }}
-            />
-            <TextField
-              fullWidth
-              margin="normal"
-              label="IFSC"
-              variant="outlined"
-              defaultValue="ICIC0000843"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              fullWidth
-              margin="normal"
-              label="Bank"
-              variant="outlined"
-              defaultValue="ICICI"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              fullWidth
-              margin="normal"
-              label="Bank Name"
-              variant="outlined"
-              defaultValue="Naman Finlease Private Limited"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              fullWidth
-              margin="normal"
-              label="Amount to Repay"
-              variant="outlined"
-              type="number"
-              placeholder="Enter amount"
-            />
+              <Box sx={{ padding: 2, borderRadius: '20px', backgroundColor: '#f5f5f5', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)' }}>
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Bank A/c No."
+                variant="outlined"
+                defaultValue="084305001370"
+                InputProps={{
+                  readOnly: true, // Making the input read-only
+                }}
+                sx={{
+                  backgroundColor: 'white',
+                  borderRadius: '10px',
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '10px',
+                  },
+                }}
+              />
 
-            <Button
+              <TextField
+                fullWidth
+                margin="normal"
+                label="IFSC"
+                variant="outlined"
+                defaultValue="ICIC0000843"
+                InputProps={{
+                  readOnly: true,
+                }}
+                sx={{
+                  backgroundColor: 'white',
+                  borderRadius: '10px',
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '10px',
+                  },
+                }}
+              />
+
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Bank"
+                variant="outlined"
+                defaultValue="ICICI"
+                InputProps={{
+                  readOnly: true,
+                }}
+                sx={{
+                  backgroundColor: 'white',
+                  borderRadius: '10px',
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '10px',
+                  },
+                }}
+              />
+
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Bank Name"
+                variant="outlined"
+                defaultValue="Naman Finlease Private Limited"
+                InputProps={{
+                  readOnly: true,
+                }}
+                sx={{
+                  backgroundColor: 'white',
+                  borderRadius: '10px',
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '10px',
+                  },
+                }}
+              />
+
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Branch Name"
+                variant="outlined"
+                type="text"
+                defaultValue="Dwarka, Sector-6, Delhi"
+                InputProps={{
+                  readOnly: true,
+                }}
+                sx={{
+                  backgroundColor: 'white',
+                  borderRadius: '10px',
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '10px',
+                  },
+                }}
+              />
+
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Account Type"
+                variant="outlined"
+                defaultValue="Current Account"
+                InputProps={{
+                  readOnly: true,
+                }}
+                sx={{
+                  backgroundColor: 'white',
+                  borderRadius: '10px',
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '10px',
+                  },
+                }}
+              />
+            </Box>
+
+            {/* <Button
               variant="contained"
               sx={{
                 mt: 2,
@@ -153,7 +215,7 @@ const RepayLoan = () => {
               type="submit"
             >
               Submit Payment
-            </Button>
+            </Button> */}
           </Box>
         </Grid>
       </Grid>

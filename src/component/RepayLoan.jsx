@@ -137,7 +137,7 @@ const RepayLoan = () => {
                       style={{ width: "50px", marginBottom: "10px" }}
                     />
                     <h3 style={{ marginLeft: "10px" }}>
-                      AGRIM FINCAP PRIVATE LIMITED{" "}
+                      Naman Finlease private Limited{" "}
                     </h3>
                   </Typography>
 

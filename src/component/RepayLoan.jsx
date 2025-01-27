@@ -208,7 +208,7 @@ const RepayLoan = () => {
                       margin="normal"
                       label="Bank Name"
                       variant="outlined"
-                      defaultValue=" AGRIM FINCAP PRIVATE LIMITED"
+                      defaultValue=" Naman Finlease private Limited"
                       InputProps={{
                         readOnly: true,
                       }}

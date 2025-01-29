@@ -338,22 +338,22 @@ const ApplyNow = () => {
 
   return (
     <>
-      {/* {openModal && <MobileOtpModal open={openModal} mobile={mobile} setIsMobileVerified={setIsMobileVerified} onClose={() => setOpenModal()} />}
-      <Box sx={{ position: 'relative', mb: 4 }}>
+      {/* {openModal && <MobileOtpModal open={openModal} mobile={mobile} setIsMobileVerified={setIsMobileVerified} onClose={() => setOpenModal()} />}*/}
+      <Box sx={{ position: "relative", mb: 4 }}>
         <video
           src={
-            'https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Apply+now-LflBC-eW.mp4'
+            "https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Apply+now-LflBC-eW.mp4"
           }
           autoPlay
           loop
           muted
           style={{
-            width: '100%',
-            height: '40%',
-            objectFit: 'cover',
+            width: "100%",
+            height: "40%",
+            objectFit: "cover",
           }}
         />
-      </Box> */}
+      </Box>
       <form>
         <Container maxWidth="xl" sx={{ mt: 4 }}>
           <Box

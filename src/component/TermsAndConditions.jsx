@@ -140,7 +140,7 @@ const TermsAndConditions = () => {
         "For any questions or concerns regarding these Terms and Conditions, please contact us at:",
         "• Email: info@speedoloan.com",
         "• Phone: +91 90999 09941",
-        "• Address: S-370, Panchsheel Park, Delhi-110017, India",
+        "• Address: 276, First Floor, Gagan Vihar, Shahdara, Delhi 110051",
       ],
     },
   ];

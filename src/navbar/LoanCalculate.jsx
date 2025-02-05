@@ -108,7 +108,7 @@ const LoanCalculate = () => {
                     "At Speedo Loan we provide immediate financial assistance by way of loan, for your untimely medical bills or emergencies. You can take care of your loved ones without any financial fears!"}
                   {title === "Unexpected Expenses" &&
                     "Speedo Loan helps you handle unexpected expenses in just a fraction of second. Whether it's a medical bill, car repair, or wedding costs, our quick application gets you funds in as little as 5 minutes with flexible loan options."}
-                  {title === "Credit Card Payments" &&
+                  {title === "Credit Card Pay" &&
                     "At Speedo Loan, we consolidate your high-interest loans into a single loan with fixed terms, allowing you to manage your payments more easily and pay off debt faster!"}
                   {title === "Vacation" &&
                     "Your well-deserved vacation doesn’t have to be put on hold due to the lack of finances! With our Speedo Loan’s quickest services, you can enjoy your dream trip without any delay!"}

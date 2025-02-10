@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BankOfbadoda from "../assets/image/ICICI_Bank_Logo.svg";
 import repayLoanBanner from "../assets/webp/WhatsApp Image 2024-10-22 at 5.46.57 PM-bJ9mMvwU.webp";
-import qrCode1 from "../assets/image/WhatsApp Image 2024-12-28 at 2.55.05 PM.jpeg"; // Import QR code image 1
+import qrCode1 from "../assets/image/WhatsApp Image 2025-02-10 at 6.26.14 PM.jpeg"; // Import QR code image 1
 
 import {
   Container,
@@ -137,7 +137,7 @@ const RepayLoan = () => {
                       style={{ width: "50px", marginBottom: "10px" }}
                     />
                     <h3 style={{ marginLeft: "10px" }}>
-                      Naman Finlease private Limited{" "}
+                      AGRIM FINCAP PRIVATE LIMITED{" "}
                     </h3>
                   </Typography>
 
@@ -154,7 +154,7 @@ const RepayLoan = () => {
                       margin="normal"
                       label="Bank A/c No."
                       variant="outlined"
-                      defaultValue="084305001370"
+                      defaultValue="802105000125"
                       InputProps={{
                         readOnly: true, // Making the input read-only
                       }}
@@ -172,7 +172,7 @@ const RepayLoan = () => {
                       margin="normal"
                       label="IFSC"
                       variant="outlined"
-                      defaultValue="ICIC0000843"
+                      defaultValue="ICIC0008021"
                       InputProps={{
                         readOnly: true,
                       }}
@@ -206,9 +206,9 @@ const RepayLoan = () => {
                     <TextField
                       fullWidth
                       margin="normal"
-                      label="Bank Name"
+                      label="Benificiary Name"
                       variant="outlined"
-                      defaultValue=" Naman Finlease private Limited"
+                      defaultValue="AGRIM FINCAP PRIVATE LIMITED COLLECTION"
                       InputProps={{
                         readOnly: true,
                       }}
@@ -227,7 +227,7 @@ const RepayLoan = () => {
                       label="Branch Name"
                       variant="outlined"
                       type="text"
-                      defaultValue="Dwarka, Sector-6, Delhi"
+                      defaultValue="JAGATPURI, DELHI"
                       InputProps={{
                         readOnly: true,
                       }}
@@ -245,7 +245,7 @@ const RepayLoan = () => {
                       margin="normal"
                       label="Account Type"
                       variant="outlined"
-                      defaultValue="Current Account"
+                      defaultValue="CURRENT ACCOUNT"
                       InputProps={{
                         readOnly: true,
                       }}

@@ -13,6 +13,7 @@ This XML file does not appear to have any style information associated with it. 
 <url>
 <loc>https://speedoloan.com/contact-us</loc>
 <changefreq>daily</changefreq>
+
 <priority>0.7</priority>
 </url>
 <url>
@@ -26,7 +27,7 @@ This XML file does not appear to have any style information associated with it. 
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://speedoloan.com/fqa</loc>
+<loc>https://speedoloan.com/fqas</loc>
 <changefreq>daily</changefreq>
 <priority>0.7</priority>
 </url>

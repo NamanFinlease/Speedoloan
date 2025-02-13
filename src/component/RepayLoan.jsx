@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BankOfbadoda from "../assets/image/ICICI_Bank_Logo.svg";
 import repayLoanBanner from "../assets/webp/WhatsApp Image 2024-10-22 at 5.46.57 PM-bJ9mMvwU.webp";
 import qrCode1 from "../assets/image/WhatsApp Image 2025-02-10 at 6.26.14 PM.jpeg"; // Import QR code image 1
+import { Table, TableBody, TableCell, TableRow } from "@mui/material";
 
 import {
   Container,
@@ -24,7 +25,6 @@ const RepayLoan = () => {
           alt="Repay Loan"
         />
       </Box>
-
       <Box
         sx={{
           overflow: "hidden",
@@ -65,9 +65,8 @@ const RepayLoan = () => {
           `}
         </style>
       </Box>
-
       {/* Main Content */}
-      <Container>
+      {/* <Container>
         {" "}
         <Typography
           variant="h4"
@@ -80,12 +79,10 @@ const RepayLoan = () => {
         <Box className="inner-page-line" mt={10}>
           <Grid container spacing={6} justifyContent="center">
             {" "}
-            {/* Centered layout for the whole section */}
-            {/* QR Code and Bank Details Form Section */}
+           
             <Grid container spacing={6}>
               {" "}
-              {/* Increased spacing between QR and form */}
-              {/* QR Code Section */}
+             
               <Grid
                 item
                 xs={12}
@@ -109,7 +106,6 @@ const RepayLoan = () => {
                   />
                 </Box>
               </Grid>
-              {/* Bank Details Form Section */}
               <Grid
                 item
                 xs={12}
@@ -118,7 +114,6 @@ const RepayLoan = () => {
                 sx={{ justifyContent: "flex-end" }}
               >
                 {" "}
-                {/* Align form to the right */}
                 <Box
                   component="form"
                   sx={{
@@ -245,7 +240,7 @@ const RepayLoan = () => {
                       margin="normal"
                       label="Account Type"
                       variant="outlined"
-                      defaultValue="CURRENT ACCOUNT"
+                      defaultValue="CURRENT A"
                       InputProps={{
                         readOnly: true,
                       }}
@@ -259,26 +254,136 @@ const RepayLoan = () => {
                     />
                   </Box>
 
-                  {/* <Button
-              variant="contained"
-              sx={{
-                mt: 2,
-                bgcolor: 'black',
-                '&:hover': {
-                  bgcolor: 'orange', // Hover color
-                },
-                color: 'white',
-              }}
-              type="submit"
-            >
-              Submit Payment
-            </Button> */}
+               
                 </Box>
               </Grid>
             </Grid>
           </Grid>
         </Box>
-      </Container>
+      </Container> */}
+
+      <Box
+        sx={{
+          mt: 15, // Adds margin-top
+          padding: 4, // Adds padding around the content for a spacious feel
+          bgcolor: "#ffffff", // White background for a clean look
+          borderRadius: 2, // Rounded corners for the box
+          boxShadow: 5, // Enhanced shadow for a more polished look
+          width: "80%", // Sets the width of the box
+          margin: "0 auto", // Centers the box horizontally
+          minHeight: "300px", // Increased height of the box
+        }}
+      >
+        <Typography
+          variant="h5"
+          sx={{
+            fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif', // Set the font family
+            color: "#333", // Text color
+            fontWeight: 600, // Makes the text bold
+            marginBottom: 3, // Adds space between heading and table
+            textAlign: "center", // Centers the text
+          }}
+        >
+          For your loan repayment assistance, please contact:
+        </Typography>
+
+        <Table
+          sx={{
+            width: "100%",
+            borderCollapse: "collapse",
+            bgcolor: "#f9f9f9",
+            borderRadius: "10px",
+          }}
+        >
+          <TableBody>
+            <TableRow
+              sx={{
+                "&:hover": {
+                  bgcolor: "#f4f4f4",
+                },
+              }}
+            >
+              <TableCell
+                sx={{
+                  fontWeight: "bold",
+                  bgcolor: "#F26722",
+                  color: "white",
+                  padding: "15px",
+                }}
+              >
+                Name:
+              </TableCell>
+              <TableCell sx={{ padding: "15px" }}>BPS Rawat</TableCell>
+            </TableRow>
+
+            <TableRow
+              sx={{
+                "&:hover": {
+                  bgcolor: "#f4f4f4", // Hover effect on rows
+                },
+              }}
+            >
+              <TableCell
+                sx={{
+                  fontWeight: "bold",
+                  bgcolor: "#F26722",
+                  color: "white",
+                  padding: "15px",
+                  borderTopLeftRadius: "10px", // Rounded top left corner
+                  borderBottomLeftRadius: "10px", // Rounded bottom left corner
+                }}
+              >
+                Designation:
+              </TableCell>
+              <TableCell
+                sx={{
+                  padding: "15px",
+                  borderTopRightRadius: "10px", // Rounded top right corner
+                  borderBottomRightRadius: "10px", // Rounded bottom right corner
+                }}
+              >
+                Collection Head
+              </TableCell>
+            </TableRow>
+            <TableRow
+              sx={{
+                "&:hover": {
+                  bgcolor: "#f4f4f4",
+                },
+              }}
+            >
+              <TableCell
+                sx={{
+                  fontWeight: "bold",
+                  bgcolor: "#F26722",
+                  color: "white",
+                  padding: "15px",
+                  borderBottomLeftRadius: "10px",
+                }}
+              >
+                Contact No:
+              </TableCell>
+              <TableCell
+                sx={{
+                  padding: "15px",
+                  borderBottomRightRadius: "10px",
+                }}
+              >
+                <a
+                  href="tel:+919205722240" // Using tel: to make the phone number clickable
+                  style={{
+                    color: "#F26722",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                  }}
+                >
+                  📞 +91 92057 22240
+                </a>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Box>
     </div>
   );
 };

@@ -381,6 +381,45 @@ const RepayLoan = () => {
                 </a>
               </TableCell>
             </TableRow>
+            <TableRow
+              sx={{
+                "&:hover": {
+                  bgcolor: "#f4f4f4",
+                },
+              }}
+            >
+              <TableCell
+                sx={{
+                  fontWeight: "bold",
+                  bgcolor: "#F26722",
+                  color: "white",
+                  padding: "15px",
+                  borderBottomLeftRadius: "10px",
+                }}
+              >
+                Official Email Id :
+              </TableCell>
+              <TableCell
+                sx={{
+                  padding: "15px",
+                  borderBottomRightRadius: "10px",
+                }}
+              >
+                <a
+                  href="mailto:collection@speedoloan.com" // Use mailto: to open mail client
+                  style={{
+                    color: "#F26722",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <span role="img" aria-label="email">
+                    📧
+                  </span>
+                  collection@speedoloan.com
+                </a>
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </Box>

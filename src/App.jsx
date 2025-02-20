@@ -14,6 +14,8 @@ import TermsAndConditions from './component/TermsAndConditions';
 import RepayLoan from './component/RepayLoan';
 import Footer from './component/Footer';
 import FAQs from './component/FAQs';
+import LendingPage from './component/LendingPage';
+import LoanForm from './component/LoanForm';
 // import Navbar from "./navbar/NavBar"
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
         <Route path='/terms-condition' element={<TermsAndConditions/>}/>
         <Route path='/repay-now' element={<RepayLoan/>}/>
         <Route path='/faq' element={<FAQs/>}/>
+        <Route path='/lending-page' element={<LendingPage />} />
+        <Route path='/lead-form' element={<LoanForm />} />
       </Routes>
       <Footer />
     </Router>

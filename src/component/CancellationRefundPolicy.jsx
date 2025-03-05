@@ -110,8 +110,8 @@ const CancellationRefundPolicy = () => {
           ))}
           <Typography>
             By using Speedo Loan, you acknowledge that you have read,
-            understood, and agree to these Terms and Conditions. Thank you for
-            choosing us as your business loan partner!
+            understood, and agree to these Cancellation and Refund Policy. Thank
+            you for choosing us as your business loan partner!
           </Typography>
         </Paper>
       </Container>

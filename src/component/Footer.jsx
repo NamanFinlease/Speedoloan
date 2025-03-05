@@ -133,6 +133,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="cancelation-refund" color="inherit" sx={linkStyle}>
+                  <i className="fa fa-angle-right" /> Cancellation & Refund
+                  Policy
+                </Link>
+              </li>
+              <li>
                 <Link href="faq" color="inherit" sx={linkStyle}>
                   <i className="fa fa-angle-right" /> FAQs
                 </Link>

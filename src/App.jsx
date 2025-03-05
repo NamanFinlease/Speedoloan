@@ -23,6 +23,7 @@ import FAQs from "./component/FAQs";
 import LendingPage from "./component/LendingPage";
 import LoanForm from "./component/LoanForm";
 import SuccessPage from "./component/SuccessPage";
+import CancellationRefundPolicy from "./component/CancellationRefundPolicy";
 
 // Custom layout to handle header and footer visibility
 const Layout = () => {
@@ -57,6 +58,10 @@ function App() {
           <Route path="/terms-condition" element={<TermsAndConditions />} />
           <Route path="/repay-now" element={<RepayLoan />} />
           <Route path="/faq" element={<FAQs />} />
+          <Route
+            path="/cancelation-refund"
+            element={<CancellationRefundPolicy />}
+          />
         </Route>
       </Routes>
     </Router>

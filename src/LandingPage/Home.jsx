@@ -5,7 +5,7 @@ import Applay from "./Applay";
 import Processingcompo from "./Processingcompo";
 import WhyChoose from "./WhyChoose";
 import HowItWorks from "./HowItWorks";
-import Footer from "./Footer";
+import Footer from "../component/Footer";
 
 const Home = () => {
   return (

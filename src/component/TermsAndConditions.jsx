@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContentPage.css";
-// import ChatButton from "./ChatButton";
+// import ChatButton from "../components/ChatButton";
 import { Link } from "react-router-dom";
 
 const TermsandConditions = () => {
@@ -42,11 +42,11 @@ const TermsandConditions = () => {
             <div className="flex flex-center content_row">
               <div className="content_item" style={{ maxWidth: "90%" }}>
                 <p>
-                  Welcome to the Speedoloan website, operated by Kasar Credit
-                  and Capital Pvt Ltd ("we", "us", "our"). By accessing or using
-                  our website ("Site") and services ("Services"), you agree to
-                  be bound by the following terms and conditions ("Terms").
-                  Please read them carefully.
+                  Welcome to the Speedoloan website, operated by Agrim Fincap
+                  Pvt Ltd ("we", "us", "our"). By accessing or using our website
+                  ("Site") and services ("Services"), you agree to be bound by
+                  the following terms and conditions ("Terms"). Please read them
+                  carefully.
                 </p>
                 <ul>
                   <li className="tc_li">
@@ -111,10 +111,10 @@ const TermsandConditions = () => {
                   <li className="tc_li">
                     <b>Intellectual Property: </b>All content on the Site,
                     including text, graphics, logos, and images, is the property
-                    of Kasar Credit and Capital Pvt Ltd or its content suppliers
-                    and is protected by intellectual property laws. You may not
-                    use, reproduce, or distribute any content from the Site
-                    without our prior written permission.
+                    of Agrim Fincap Private Limited or its content suppliers and
+                    is protected by intellectual property laws. You may not use,
+                    reproduce, or distribute any content from the Site without
+                    our prior written permission.
                   </li>
                   <li className="tc_li">
                     <b>Modification of Terms: </b>We reserve the right to modify
@@ -131,8 +131,8 @@ const TermsandConditions = () => {
                   </li>
                   <li className="tc_li">
                     <b>Limitation of Liability: </b>To the maximum extent
-                    permitted by law, Kasar Credit and Capital Pvt Ltd shall not
-                    be liable for any indirect, incidental, special, or
+                    permitted by law, Agrim Fincap Private Limited shall not be
+                    liable for any indirect, incidental, special, or
                     consequential damages arising out of or in connection with
                     your use of the Site and Services.
                   </li>
@@ -226,9 +226,9 @@ const TermsandConditions = () => {
                   please contact us at:{" "}
                 </p>
                 <ul>
-                  <li className="tc_li">Kasar Credit and Capital Pvt Ltd</li>
+                  <li className="tc_li">Agrim Fincap Private Limited</li>
                   <li className="tc_li">info@speedoloan.com</li>
-                  <li className="tc_li">+918800002890</li>
+                  <li className="tc_li">+9190999 09941</li>
                 </ul>
 
                 <div className="mt30">

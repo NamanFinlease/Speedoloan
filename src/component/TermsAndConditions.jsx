@@ -213,7 +213,7 @@ const TermsandConditions = () => {
                     <b>Customer Support:</b> If you encounter any issues or have
                     questions about the data deletion process, please contact
                     our customer support team at info@speedoloan.com or call us
-                    at +918800002890.
+                    at +9190999 09941.
                   </li>
                 </ul>
               </div>

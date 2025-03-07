@@ -1,175 +1,226 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Box, Typography, Container, Paper, Divider, Slide } from '@mui/material';
-import { Fade } from '@mui/material';
-import privacyImage from '../assets/webp/16.webp'; // Ensure this path is correct
+import React from "react";
+import { FaUser, FaMobile, FaLocationArrow } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import "./ContentPage.css";
+// import ChatButton from "./ChatButton";
+import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
-    const sections = [
-        {
-            title: "1. Information We Collect",
-            content: [
-                "When you interact with Speedo Loan, we may collect the following types of information:",
-                "• Personal Identification Information: Name, email address, phone number, physical address, date of birth, PAN, Aadhaar details, etc.",
-                "• Financial Information: Bank account details, income statements, GST Number, past credit history, statements of bank account, etc."
-            ]
-        },
-        {
-            title: "2. How We Use Your Information",
-            content: [
-                "We use your collected information to:",
-                "• Process loan applications and verify your identity.",
-                "• Improve our services and website functionality.",
-                "• Communicate important updates regarding your loan, account status, and relevant services.",
-                "• Conduct internal audits and comply with legal and regulatory obligations.",
-                "• Personalize your experience and offer customized loan solutions."
-            ]
-        },
-        {
-            title: "3. Sharing Your Information",
-            content: [
-                "We do not sell or rent your personal information to third parties. However, we may share your data under the following circumstances:",
-                "• With trusted third-party service providers who help us in delivering our services (e.g., payment processors, verification agencies).",
-                "• To comply with legal obligations, regulatory requests, or to protect the rights and safety of Speedo Loan and its users."
-            ]
-        },
-        {
-            title: "4. Data Security",
-            content: [
-                "Speedo Loan takes appropriate measures to protect your personal and financial data. We use industry-standard encryption methods and secure servers to prevent unauthorized access, data breaches, or misuse of information."
-            ]
-        },
-        {
-            title: "5. Cookies",
-            content: [
-                "Our website may use cookies to improve the user experience. Cookies are small text files stored on your device that help us understand how you use our website. You can choose to accept or decline cookies in your browser settings. However, declining cookies may affect your ability to use certain features on the site."
-            ]
-        },
-        {
-            title: "6. Your Rights",
-            content: [
-                "You have the right to:",
-                "• Access the personal information we hold about you.",
-                "• Request corrections to any inaccurate or incomplete information.",
-                "• Opt out of marketing communications at any given time.",
-                "• Request deletion of your personal data, subject to legal obligations."
-            ]
-        },
-        {
-            title: "7. Third-Party Links",
-            content: [
-                "Speedo Loan may contain links to third-party websites. We are not responsible for the privacy practices of these external sites and encourage you to review their respective privacy policies."
-            ]
-        },
-        {
-            title: "8. Changes to This Privacy Policy",
-            content: [
-                "We reserve the right to update or modify this Privacy Policy at any time. Any changes will be posted on this page with an updated effective date. We encourage you to review this policy periodically."
-            ]
-        },
-        {
-            title: "9. Contact Us",
-            content: [
-                "If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:",
-                "Email: info@speedoloan.com",
-                "Phone: +91 90999 09941",
-                "Address: 276, First Floor, Gagan Vihar, Shahdara, Delhi 110051"
-            ]
-        }
-    ];
-    
+  return (
+    <>
+      <div className="content_page_wrapper">
+        {/* <div className="content_page_banner_wrapper">
+          <div className="content_page_banner_wrapper_overlay">
+            <h2>Privacy Policy</h2>
+            <div style={{ marginTop: "10px" }}>
+              <Link
+                to="/"
+                style={{
+                  color: "#26b9db",
+                  fontWeight: "600",
+                  marginTop: "10px",
+                  textDecoration: "none",
+                }}
+              >
+                Home
+              </Link>
+              <span
+                style={{ color: "white", fontSize: "16px", margin: "0 10px" }}
+              >
+                →
+              </span>
+              <span
+                style={{ color: "white", fontWeight: "600", fontSize: "16px" }}
+              >
+                Privacy Policy
+              </span>
+            </div>
+          </div>
+        </div> */}
 
-    const [isVisible, setIsVisible] = useState(false);
-    const policyRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                setIsVisible(true); // Set visibility to true when in view
-            } else {
-                setIsVisible(false); // Set visibility to false when out of view
-            }
-        });
-
-        if (policyRef.current) {
-            observer.observe(policyRef.current);
-        }
-
-        return () => {
-            if (policyRef.current) {
-                observer.unobserve(policyRef.current);
-            }
-        };
-    }, []);
-
-    return (
-        <div ref={policyRef}>
-            {/* Full-screen Image */}
-            <Box sx={{ width: '100vw', height: 'auto' }}>
-                <Slide direction="left" in={isVisible} timeout={1000}>
-                    <img 
-                        src={privacyImage} 
-                        alt="Privacy Policy" 
-                        style={{  
-                            marginTop: '0px',
-                            width: '100%', 
-                            height: 'auto', 
-                            objectFit: 'cover' // Ensures the image covers the area without distortion
-                        }} 
-                    />
-                </Slide>
-            </Box>
-
-            <Container maxWidth="lg">
-                {/* Prominent Heading */}
-                <Box sx={{ textAlign: 'center', mt: 4 }}>
-                    <Fade in={isVisible} timeout={1000}>
-                        <Typography 
-                            variant="h3" 
-                            gutterBottom 
-                            sx={{ 
-                                color: 'black', 
-                                fontWeight: 'bold', 
-                                fontSize: '2.8rem', 
-                                letterSpacing: '0.05em',
-                                transition: 'transform 0.3s ease-in-out',
-                                '&:hover': { transform: 'scale(1.05)' }
-                            }}
-                        >
-                            Privacy Policy
-                        </Typography>
-                    </Fade>
-                </Box>
-
-                {/* Policy Content */}
-                <Paper elevation={3} sx={{ padding: 4, mt: 2 }}>
-                    {sections.map((section, sectionIndex) => (
-                        <div key={sectionIndex}>
-                            <Box sx={{ transition: 'transform 0.3s ease-in-out', '&:hover': { transform: 'scale(1.05)' } }}>
-                                <Fade in={isVisible} timeout={1000 + sectionIndex * 500}>
-                                    <Typography 
-                                        variant="h6" 
-                                        gutterBottom 
-                                        sx={{ color: 'black', fontWeight: 'bold' }}
-                                    >
-                                        {section.title}
-                                    </Typography>
-                                </Fade>
-                                {section.content.map((line, lineIndex) => (
-                                    <Fade in={isVisible} timeout={1200 + sectionIndex * 500 + lineIndex * 500} key={lineIndex}>
-                                        <Typography>
-                                            {line}
-                                        </Typography>
-                                    </Fade>
-                                ))}
-                            </Box>
-
-                            <Divider sx={{ my: 2 }} />
-                        </div>
-                    ))}
-                </Paper>
-            </Container>
+        <div className="text_content_wrapper">
+          <div className="text_content" style={{ width: "95%" }}>
+            <h1 className="page_title mt30 mb50">Privacy Policy</h1>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <p>
+                  <b>Kasar Credit and Capital Private Limited</b> ("we," "our,"
+                  "us") operates the https://www.speedoloan.com website (the
+                  "Service"). This Privacy Policy explains how we collect, use,
+                  and share your personal information when you use our Service.
+                </p>
+                <h2 className="mb10 mt10">Information We Collection</h2>
+                <p className="mt10">
+                  <b>Personal Information:</b> When you apply for a loan or use
+                  our Services, we may collect personal information such as your
+                  Name, address, email address, phone number, date of birth, and
+                  other identifying information.
+                </p>
+                <p className="mt10">
+                  <b>Usage Information:</b> We may collect information about how
+                  you access and use our website and services, including IP
+                  addresses, browser type, and operating system.
+                </p>
+                <p className="mt10">
+                  <b>Financial Information:</b> Bank account details, credit
+                  card information, credit history, and other financial data
+                  necessary for providing our services.
+                </p>
+                <p className="mt10">
+                  <b>Identification Documents:</b> Copies of government-issued
+                  identification documents, such as passports or driver's
+                  licenses.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <h2 className="mb10 mt10">How We Use Your Information</h2>
+                <p className="mt10">
+                  We use your information for the following purposes:
+                </p>
+                <p className="mt10">To provide and maintain our services.</p>
+                <p className="mt10">
+                  To process your transactions and manage your accounts.
+                </p>
+                <p className="mt10">
+                  To verify your identity and prevent fraud.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <h2 className="mb10 mt10">Data security</h2>
+                <p className="mt10">
+                  We implement appropriate technical and organisational measures
+                  to protect your personal information from unauthorised access,
+                  use, or disclosure. However, no method of transmission over
+                  the internet or electronic storage is 100% secure.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <h2 className="mb10 mt10">Your rights</h2>
+                <p className="mt10">
+                  Depending on your jurisdiction, you may have the following
+                  rights regarding your personal information:
+                </p>
+                <p className="mt10">
+                  The right to access your personal information.
+                </p>
+                <p className="mt10">
+                  The right to correct any inaccurate or incomplete information.
+                </p>
+                <p className="mt10">
+                  The right to request the deletion of your personal
+                  information.
+                </p>
+                <p className="mt10">
+                  The right to object to or restrict the processing of your
+                  personal information.
+                </p>
+                <p className="mt10">
+                  To exercise these rights, please contact us using the
+                  information provided below.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <h2 className="mb10 mt10">Data Retention and Deletion</h2>
+                <p className="mt10">
+                  You also attest to the fact that, in accordance with our
+                  adopted document retention policy, we will be free to keep
+                  such papers for internal records.
+                </p>
+                <p className="mt10">
+                  You have the choice to consent to the use of certain data,
+                  limit its disclosure to third parties, control data retention,
+                  or revoke consent that has already been given to collect
+                  personal data if the Credit Line you were given is settled and
+                  you owe them nothing more, and you obtain specific regulatory
+                  authority in accordance with the Prevention of
+                  Money-Laundering Act, 2002.
+                </p>
+                <p className="mt10">
+                  Depending on your jurisdiction, you may have the following
+                  rights regarding your personal information:
+                </p>
+                <p className="mt10">
+                  You have a right to request the deletion of your personal
+                  information.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <h2 className="mb10 mt10">Cookies and Tracking Technologies</h2>
+                <p className="mt10">
+                  We use cookies and similar tracking technologies to enhance
+                  your experience on our website. You can control the use of
+                  cookies through your browser settings.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <h2 className="mb10 mt10">Grievance Officer</h2>
+                <p className="mt10">
+                  At Speedoloan, your privacy and satisfaction are our top
+                  priorities. To ensure your concerns are addressed promptly, we
+                  have appointed a dedicated Grievance Officer. If you have any
+                  issues or grievances regarding your personal information or
+                  our services, please do not hesitate to reach out.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <h2 className="mb15 mt10">Contact Our Grievance Officer</h2>
+                <div className="ml20">
+                  <p className="mt10 flex flex-center">
+                    <FaUser className="content_icon mr5" />
+                    <span>Sanjay Singh</span>
+                  </p>
+                  <p className="mt10 flex flex-center">
+                    <FaMobile className="content_icon mr5" />
+                    <span>+91-8800002898</span>
+                  </p>
+                  <p className="mt10 flex flex-center">
+                    <MdEmail className="content_icon mr5" />
+                    <span>care@Speedoloan.com</span>
+                  </p>
+                  <p className="mt10 flex flex-center">
+                    <FaLocationArrow className="content_icon mr5" />
+                    <span>
+                      G -51, Krishna Apra Business Square, Netaji Subhash Place,
+                      New Delhi - 110034
+                    </span>
+                  </p>
+                </div>
+                <p className="mt10">
+                  We are committed to resolving your concerns in a timely and
+                  efficient manner. Thank you for choosing Speedoloan.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-center content_row">
+              <div className="content_item" style={{ maxWidth: "90%" }}>
+                <h2 className="mb10 mt10">Changes to this privacy policy</h2>
+                <p className="mt10">
+                  We may update this Privacy Policy from time to time. We will
+                  notify you of any significant changes by posting the new
+                  Privacy Policy on our website.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+      {/* <ChatButton /> */}
+    </>
+  );
 };
 
 export default PrivacyPolicy;

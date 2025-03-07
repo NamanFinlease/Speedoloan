@@ -24,6 +24,7 @@ import LendingPage from "./component/LendingPage";
 import LoanForm from "./component/LoanForm";
 import SuccessPage from "./component/SuccessPage";
 import CancellationRefundPolicy from "./component/CancellationRefundPolicy";
+import Home from "./LandingPage/Home";
 
 // Custom layout to handle header and footer visibility
 const Layout = () => {
@@ -44,9 +45,10 @@ function App() {
     <Router>
       <Routes>
         {/* Routes that hide Header and Footer */}
-        <Route path="/landing-page" element={<LendingPage />} />
-        <Route path="/success" element={<SuccessPage />} />
-        <Route path="/lead-form" element={<LoanForm />} />
+        {/* <Route path="/landing-page" element={<LendingPage />} /> */}
+        <Route path="/landing-page" element={<Home />} />
+        {/* <Route path="/success" element={<SuccessPage />} />
+        <Route path="/lead-form" element={<LoanForm />} /> */}
 
         {/* Routes with Header and Footer */}
         <Route element={<Layout />}>
